@@ -51,6 +51,7 @@ color5 CC0000
 color6 AAAAAA
 color7 484848
 
+# woeid: shanghai: 2151849 nanjing  2137081
 TEXT
 ${execi 300 curl -s "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20%3D%222137081%22%20and%20u%3D%22c%22&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys" -o ~/.cache/weather.xml}${font Open Sans Light:size=15}${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "city=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}, ${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "country=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
 ${font Open Sans Light:size=70}${alignr}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°${font}${voffset -35}
@@ -63,14 +64,16 @@ ${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:forecast" ~/.cache/weathe
 ${goto 20}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°${goto 90}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°${goto 160}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3'}°${goto 230}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°${goto 300}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°
 ${goto 20}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°${goto 90}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°${goto 160}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3'}°${goto 230}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°${goto 300}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°
 ${color7}${hr}${color}
+System: ${sysname}${alignr}Kernel: ${kernel}
+${color lightgrey}${font Monospace:size=10}${time 20%y年%b%d日 %A}${font}${alignr}${time %k:%M:%S}${color}
 
+${font Inziu Iosevka SC:size=10}${execi 10 zs}${font}
+${color7}${hr}${color}
 ${color1}CPU TEMPERATURE : ${color3}${execi 1 acpi -t | cut -c 15-19}°C${color} 
-${color1}CPU: ${color3}${cpu}%${color}${alignr}${color1}DISK IO: 
-${cpugraph 75,135 FF8800 FF8800}${alignr}${diskiograph 75,135 FF8800 FF8800}
-
+${color1}CPU: ${color3}${cpu}%${color}${alignr}${color1}DISK IO: ${color3}${diskio}${color}
+${cpugraph 75,135 FF8800 FF8800}${alignr}${diskiograph 75,135 FF8800 FF8800 -l}
 ${color1}MEMORY: ${color}${color3}${memperc}%${color}
 ${color6}${membar}
-
 ${if_existing /proc/net/route wlp2s0}
 ${color1}NETWORK:
 ${color1}Up: ${color3}${upspeedf wlp2s0}KiB/s${alignr}${color1}Down: ${color3}${downspeedf wlp2s0}KiB/s
