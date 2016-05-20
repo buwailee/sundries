@@ -1,0 +1,20 @@
+#!/bin/bash
+# Author : buwailee
+# Script follows here:
+if [ $1 == "--tty" ]; then
+	python ~/software/BiliDan/bilidan.py --mpvflags='--vo=opengl-hq' $2
+elif [ $1 == "--null" ]; then 
+	python ~/software/BiliDan/bilidan.py --mpvflags='--vo=null' $2
+else
+	python ~/software/BiliDan/bilidan.py $1
+fi
+# if [ ${#string} -lt 10 ]
+# then
+# 	youtube-dl --get-title http://www.bilibili.com/video/$1/
+# 	val=`youtube-dl -g http://www.bilibili.com/video/$1/`
+# 	baka-mplayer $val
+# else
+# 	youtube-dl --get-title $1
+# 	val=`youtube-dl -g $1`
+# 	baka-mplayer $val
+# fi
