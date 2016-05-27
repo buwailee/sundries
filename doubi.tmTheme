@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>author</key>
-	<string>Buwailee</string>
+	<string>Buwai Lee</string>
 	<key>colorSpaceName</key>
 	<string>sRGB</string>
 	<key>comment</key>
-	<string>Light Theme For Popping Colors</string>
+	<string>a Light Theme Modified from Popping</string>
 	<key>gutterSettings</key>
 	<dict>
 		<key>background</key>
@@ -26,9 +26,9 @@
 		<string>#E19938</string>
 	</dict>
 	<key>name</key>
-	<string>Poppins</string>
+	<string>doubi</string>
 	<key>semanticClass</key>
-	<string>theme.light.poppins</string>
+	<string>theme.light.doubi</string>
 	<key>settings</key>
 	<array>
 		<dict>
@@ -102,7 +102,7 @@
 			<key>name</key>
 			<string>Function, Special Method, Block Level</string>
 			<key>scope</key>
-			<string>entity.name.function, meta.function, support.function, keyword.other.special-method, meta.block-level</string>
+			<string>entity.name.function, support.function, keyword.other.special-method, meta.block-level</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

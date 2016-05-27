@@ -23,12 +23,12 @@ contexts:
         4: entity.name.function.scm
         7: variable.scm
         10: variable.scm
-    - match: (\b(?i:(lambda))\b)(\s+\()((\S+\s+)*)((\w|\+|\*|\/|\-|\!|\?)*)(\))
+    - match: (\b(?i:(lambda))\b)(\s+\()(((\w|\+|\*|\/|\-|\!|\?)+(?!\))\s+)*)((\w|\+|\*|\/|\-|\!|\?)*)(\))
       scope: meta.function.scm
       captures:
         2: storage.type.function-type.scm
         4: variable.scm
-        6: variable.scm
+        7: variable.scm
     - match: (\((?!\())(\S+)(\b\s+\b)
       scope: meta.function.scm
       captures:

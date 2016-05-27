@@ -1,6 +1,6 @@
 author: Buwai Lee
 colorSpaceName: sRGB
-comment: Light Theme For Popping Colors
+comment: a Light Theme Modified from Popping
 gutterSettings:
   background: '#11232D'
   foreground: '#CCCCCC'
@@ -9,8 +9,8 @@ gutterSettings:
   selectionBorder: '#E19938'
   selectionForeground: '#11232D'
   selectionIconsHover: '#E19938'
-name: Popforclang
-semanticClass: theme.light.Popforclang
+name: doubi
+semanticClass: theme.light.doubi
 settings:
 - settings:
     activeGuide: '#E91E63'
