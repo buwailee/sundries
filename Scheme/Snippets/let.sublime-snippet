@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[(let ((${1:variable} ${2:value}))
+	(${3:code}))]]></content>
+    <tabTrigger>let</tabTrigger>
+    <scope>source.scm</scope>
+    <description>let</description>
+</snippet>

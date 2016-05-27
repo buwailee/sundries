@@ -1,0 +1,71 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Scheme
+file_extensions:
+  - scm
+  - ss
+scope: source.scm
+contexts:
+  main:
+    - match: '\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b'
+      scope: constant.numeric.scm
+    - match: '(\b(?i:#t|#n|true|false|)\b)|(''\(\))'
+      scope: constant.language.scm
+    - match: (;).*$\n?
+      scope: comment.line.semicolon.scm
+      captures:
+        1: punctuation.definition.comment.scm
+    - match: (\b(?i:(define))\b)(\s+\()((\w|\+|\*|\/|\-|\!|\?)*)(\s+)(((\w|\+|\*|\/|\-|\!|\?)+\s+)*)((\w|\+|\*|\/|\-|\!|\?)*)(\))
+      scope: meta.function.scm
+      captures:
+        2: storage.type.function-type.scm
+        4: entity.name.function.scm
+        7: variable.scm
+        10: variable.scm
+    - match: (\b(?i:(lambda))\b)(\s+\()((\S+\s+)*)((\w|\+|\*|\/|\-|\!|\?)*)(\))
+      scope: meta.function.scm
+      captures:
+        2: storage.type.function-type.scm
+        4: variable.scm
+        6: variable.scm
+    - match: (\((?!\())(\S+)(\b\s+\b)
+      scope: meta.function.scm
+      captures:
+        2: entity.name.function.scm
+    - match: (\b(?i:(let))\b)(\s+\(\()((\w|\+|\*|\/|\-|\!|\?)*)
+      scope: meta.function.local.value.scm
+      captures:
+        2: storage.type.function-type.scm
+        4: entity.name.function.scm
+    - match: (\b(?i:(define))\b)(\s+)((\w|\+|\*|\/|\-|\!|\?)*)
+      scope: punctuation.definition.scm
+      captures:
+        2: storage.type.function-type.scm
+        4: entity.name.function.scm
+    - match: (#)(\w|[\\+-=<>'"&#])+
+      scope: constant.character.scm
+      captures:
+        1: punctuation.definition.constant.scm
+    - match: (\*)(\S*)(\*)
+      scope: variable.other.global.scm
+      captures:
+        1: punctuation.definition.variable.scm
+        3: punctuation.definition.variable.scm
+    - match: '\b(?i:case|do|loop|if|else|when|begin|cond)\b'
+      scope: keyword.control.scm
+    - match: '(?i:eqv(\?)|eq(\?)|equal(\?)|bit-string(\?)|boolean(\?)|cell(\?)|char(\?)|condition(\?)|environment(\?)|null(\?)|number(\?)|pair(\?)|port(\?)|procedure(\?)|promise(\?)|string(\?)|symbol(\?)|vector(\?)|weak-pair(\?)|number(\?)|complex(\?)|real(\?)|rational(\?)|integer(\?)|exact(\?)|inexact(\?)|exact-integer(\?)|exact-nonnegative-integer(\?)|exact-rational(\?)|zero(\?)|positive(\?)|negative(\?)|odd(\?)|even(\?)|list(\?)|member)'
+      scope: keyword.operator.scm
+    - match: '(([\\+-/*=<>&#])* )|(\b(?i:not|and|or|apply|cons|append|lambda|format|quote|eval|append|map|list|make-list|load|cf|abs|angle|ceiling|denominator|expt|floor|gcd|imag-part|lcm|magnitude|make-polar|make-rectangular|max|min|modulo|numerator|quotient|rationalize|real-part|remainder|round|truncate|random|car|cdr|caar|cadr|cdar|cddr|caaar|caadr|cadar|caddr|cdaar|cdadr|cddar|cdddr|caaaar|caaadr|caadar|caaddr|cadaar|cadadr|caddar|cadddr|cdaaar|cdaadr|cdadar|cdaddr|cddaar|cddadr|cdddar|length|sort|reverse|vector|random|string|string-length|quick-sort|exp|log|sin|cos|tan|asin|acos|atan|sqrt|expt)\b)|(set(\!))|(set-cdr(\!))|(set-car(\!))|(inexact-(\>)exact)'
+      scope: support.function.scm
+    - match: '"'
+      captures:
+        0: punctuation.definition.string.begin.scm
+      push:
+        - meta_scope: string.quoted.double.scm
+        - match: '"'
+          captures:
+            0: punctuation.definition.string.end.scm
+          pop: true
+        - match: \\.
+          scope: constant.character.escape.scm

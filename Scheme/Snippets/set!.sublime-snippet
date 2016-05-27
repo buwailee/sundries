@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[(set! ${1:place} ${2:value})]]></content>
+    <tabTrigger>set!</tabTrigger>
+    <scope>source.scm</scope>
+    <description>set!</description>
+</snippet>

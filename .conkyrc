@@ -8,7 +8,7 @@ no_buffers yes
 
 # Window specifications #
 own_window yes
-own_window_type normal
+own_window_type dock
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_title
 own_window_colour 2D2D2D
@@ -19,8 +19,8 @@ minimum_size 300
 
 # Alignment #
 alignment tr
-gap_x 0
-gap_y 0
+gap_x 16
+gap_y 16
 
 border_inner_margin 15
 border_outer_margin 0
@@ -84,4 +84,7 @@ ${color1}NETWORK WIFI:
 ${color1}Up:${color} ${color3}${upspeedf eth0}KiB/s${color}${alignr}${color1}Down:${color} ${color3}${downspeedf eth0}KiB/s${color}
 ${upspeedgraph eth0 75,135 FF8800 FF8800 -l}${alignr}${downspeedgraph eth0 75,135 FF8800 FF8800 -l}
 ${color1}Sent:${color} ${color2}${totalup eth0}${color}${alignr}${color1}Received:${color} ${color2}${totaldown eth0}${color}
+${else}
+Network disconnected
+${color6}Connect to a network to see statistics${color}
 ${endif}${endif}

@@ -1,0 +1,128 @@
+author: Buwai Lee
+colorSpaceName: sRGB
+comment: Light Theme For Popping Colors
+gutterSettings:
+  background: '#11232D'
+  foreground: '#CCCCCC'
+  iconsHover: '#66CCCC'
+  selectionBackground: '#FFCC66'
+  selectionBorder: '#E19938'
+  selectionForeground: '#11232D'
+  selectionIconsHover: '#E19938'
+name: Popforclang
+semanticClass: theme.light.Popforclang
+settings:
+- settings:
+    activeGuide: '#E91E63'
+    background: '#FFFFFF'
+    caret: '#E91E63'
+    foreground: '#000000'
+    gutter: '#FFFFFF'
+    invisibles: '#EDEDED'
+    lineHighlight: '#F3F3F3'
+    selection: '#FF85AE70'
+    selectionBorder: '#E91E63'
+- name: Comment
+  scope: comment, punctuation.definition.comment
+  settings:
+    foreground: '#AAAAAA'
+- name: Foreground
+  scope: 'keyword.operator.class, constant.other, source.php.embedded.line, text.html,
+    meta.block.c++, meta.namespace-block, meta.parens.c++ '
+  settings:
+    foreground: '#000000'
+- name: Preprocessor
+  scope: meta.preprocessor,keyword.control.import.include, punctuation.separator.continuation
+  settings:
+    foreground: '#909090'
+- name: Keyword, Storage
+  scope: keyword, storage, storage.type, entity.name.tag.css, constant.other.php
+  settings:
+    foreground: '#EE3E34'
+- name: Function, Special Method, Block Level
+  scope: entity.name.function, support.function, keyword.other.special-method,
+    meta.block-level
+  settings:
+    foreground: '#673AB7'
+- name: Attributes
+  scope: entity.other.attribute-name
+  settings:
+    foreground: '#EE3E34'
+- name: Operator, Misc
+  scope: ' constant.other.color, meta.tag, punctuation.definition.tag, punctuation.definition.tag.*.*,
+    punctuation.separator.inheritance.php, punctuation.definition.tag.html, punctuation.definition.tag.begin.html,
+    punctuation.definition.tag.end.html, punctuation.definition.bold.markdown, punctuation.definition.italic.markdown'
+  settings:
+    foreground: '#4CAF50'
+- name: String, Symbols, Inherited Class, Markup Heading
+  scope: string, constant.other.symbol, entity.other.inherited-class, markup.heading,
+    markup.inserted.git_gutter
+  settings:
+    foreground: '#4CAF50'
+- name: Class, Support
+  scope: entity.name.class, entity.name.type.class, support.type, storage.modifier,
+    storage.type.cpp, support.type.sys-types.cpp, support.type.pthread.cpp, support.class.cpp,
+    support.orther.namespace.use.php, meta.use.php, support.other.namespace.php, entity.name.type.namespace.c++,`
+    markup.changed.git_gutter
+  settings:
+    foreground: '#0062BD'
+- name: Container
+  scope: container.c++
+  settings:
+    foreground: '#808000'
+- name: Number, Constant, Function Argument, Tag Attribute, Embedded
+  scope: constant.numeric, constant.language, support.constant, constant.character,
+    variable.parameter, punctuation.section.embedded, keyword.other.unit, variable.other,
+    variable.language
+  settings:
+    foreground: '#FF9800'
+- name: Tag
+  scope: entity.name.tag, meta.tag.sgml, markup.deleted.git_gutter
+  settings:
+    foreground: '#EE3E34'
+- name: Variable, String Link
+  scope: variable, support.other.variable, string.other.link,entity.name.tag.inline.any.html,entity.name.tag.block.any.html,entity.name.tag.script.html,entity.name.tag.structure.any.html,meta.tag.structure.any.html,entity.name.tag
+  settings:
+    foreground: '#0062BD'
+- name: Invalid
+  scope: invalid
+  settings:
+    background: '#F2777A59'
+- name: Separator
+  scope: meta.separator
+  settings:
+    background: '#99CCCC59'
+- name: Deprecated
+  scope: invalid.deprecated
+  settings:
+    background: '#CC99CC59'
+- name: URL
+  scope: '*url*, *link*, *uri*'
+  settings: {}
+- name: Embedded
+  scope: source.php.embedded, source.css.embedded, source.js.embedded, source.*.embedded
+  settings:
+    background: ''
+- name: Bold markup
+  scope: markup.bold
+  settings:
+    fontStyle: bold underline
+    foreground: '#EE3E34'
+- name: Italic markup
+  scope: markup.italic
+  settings:
+    fontStyle: italic
+    foreground: '#FF9800'
+- name: SublimeLinter Gutter Mark
+  scope: sublimelinter.gutter-mark
+  settings:
+    foreground: '#FFFFFF'
+- name: SublimeLinter Warning
+  scope: sublimelinter.mark.warning
+  settings:
+    foreground: '#DDB700'
+- name: SublimeLinter Error
+  scope: sublimelinter.mark.error
+  settings:
+    foreground: '#D02000'
+uuid: C14EA981-F1C7-11E2-B778-0800200C9A66
