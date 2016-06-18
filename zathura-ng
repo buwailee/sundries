@@ -1,0 +1,4 @@
+#!/bin/bash
+# Author : buwailee
+# Script follows here:
+zathura -x "subl $(pwd)/%{input}:%{line}:%{column}" $1
