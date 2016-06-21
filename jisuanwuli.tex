@@ -1,0 +1,58 @@
+%!TEX program = xelatex
+\documentclass[10pt]{extarticle}
+\usepackage[zh]{noteheader}
+\usepackage{ctex}
+\pagestyle{empty}
+\newcommand{\no}[1]{{$(#1)$}}%编号
+\begin{document}
+\begin{center}
+	2015年南京大学计算物理期末考试卷（由Unsinn默写）
+\end{center}
+
+\noindent 1.现有时间-速度表：
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l c c c c c c}
+\hline
+$t(\mathrm{s})$ & 0 & 10 & 15 &20 &23 &30\\
+$v(\mathrm{m/s})$ & 0 & 230 & 263 & 518 &603 &902\\
+\hline
+\end{tabular}
+\end{table}
+\noindent $(1)$. 用抛物线（三点插值）求$t=16$时候的速度。\\
+$(2)$. 使用最小二乘法拟合曲线，拟合函数为$f(x)=ax^2+bx+c$，求$a,b,c$.
+
+\vspace{10ex}
+
+\noindent 2.写出打靶法求方程
+\[
+	\begin{cases}
+		\displaystyle{\frac{\mathrm{d}^2\varphi}{\mathrm{d}x^2}=-k^2 \varphi};\\
+		\varphi(0)=\varphi(1)=0,
+	\end{cases}
+\]
+的最小本征值的（C或Fortran）程序。
+
+\vspace{10ex}
+
+\noindent 3.在抛物线势能的势阱中的粒子初始波函数为
+\[
+	\Psi(x,0)=\sqrt{\frac{a}{\pi}}\exp\bigl(-ax^2\bigr),
+\]
+满足方程
+\[
+	i\hbar \frac{\partial \Psi}{\partial t}=-\frac{\hbar^2}{2m}\frac{\partial^2 \Psi}{\partial x^2}+b x^2\Psi(x,t).
+\]
+写出求解随时间演化的波函数的（C或Fortran）程序。
+
+\vspace{10ex}
+
+\noindent 4.写出一种Monte-Carlo方法求$\pi$的（C或Fortran）程序。
+
+\vspace{10ex}
+
+\noindent 5.在分子动力学模拟中\\
+$(1)$.写出一种积分运动方程的算法及其优缺点；\\
+$(2)$.在等温单原子气体的模拟中，写出初始化粒子速度的（C或Fortran）程序。
+\end{document}
