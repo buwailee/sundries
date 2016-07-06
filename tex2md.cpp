@@ -1,25 +1,25 @@
 #include <iostream>
-#include <sstream>
-#include <fstream>
-#include <cctype>
 #include <vector>
+#include "tex2md.h"
 
 using namespace std;
 
-bool hashead = false;
-
-string readoneword(fstream &in, char &c){
+template <typename T> inline std::string readoneword(T &in, char &c){
 	string temp("");
 	while(in.get(c) && isalnum(c))
 		temp.push_back(c);
 	return temp;
 }
 
-string readwords(fstream &in, char &c){
+template <typename T> std::string readwords(T &in, char &c){
 	string temp("");
+	int depth = 1;
 	if (c == '{')
-		while(in.get(c) && c != '}')
+		while(in.get(c)){
+			if (c == '{') depth++;
+			else if (c == '}' && --depth == 0) break;
 			temp.push_back(c);
+		}
 	return temp;
 }
 
@@ -34,15 +34,12 @@ string filename(const char a[], string b){
 }
 
 
-stringstream stepone(fstream &in){
+stringstream stepone(ifstream &in){
 	stringstream temp;
 
 	char c;
 	int count = 0;
-	int chapter = 0;
-	int section = 0;
-	int subsection = 0;
-
+	ChaSect counter;
 	while(in.get(c)){
 		char d = in.peek();
 		if (c == '%')
@@ -52,25 +49,28 @@ stringstream stepone(fstream &in){
 		else if (c == '\\' && isalnum(d)){
 			string foo = readoneword(in, c);
 			if (foo == "chapter")
-				temp << "# " << ++chapter << ". " << readwords(in, c) << ' ';
+				temp << "# " << ++counter.chapter << ". " << readwords(in, c) << ' ';
 			else if (foo == "section")
-				temp << "## " << chapter << "." << ++section << ". " << readwords(in, c) << ' ';
+				temp << "## " << counter.chapter << "." << ++counter.section << ". " << readwords(in, c) << ' ';
 			else if (foo == "subsection")
-				temp << "### " << chapter << "." << section << "." << ++subsection << ". " << readwords(in, c) << ' ';
+				temp << "### " << counter.chapter << "." << counter.section << "." << ++counter.subsection << ". " << readwords(in, c) << ' ';
 			// else if (foo == "textit")
 			// 	temp << "*" << readwords(in, c) << "* ";
 			else if (foo == "pro" || foo == "lem" || foo == "defi" || foo == "theo" || foo == "para")
 				temp << '\n' << ++count << ' ';
 			else if (foo == "proof")
-				temp << "> ";
+				temp << "*Proof.* ";
 			else if (foo == "qed")
-				temp << '\n';
+				temp << "<div align = right>Q.E.D.</div>";
+			else if (foo == "label"){
+				temp << "<span id = \"" << readwords(in, c) << "\"></span>";
+			}
 			else if (foo == "begin"){
 				string bar = readwords(in, c);
 				if (bar == "pro" || bar == "lem" || bar == "defi" || bar == "theo")
 					temp << ++count << ' ';
 				else if (bar == "proof")
-					temp << "> ";
+					temp << "*Proof.* ";
 				else if (bar == "document")
 					hashead = true;
 				else if (bar == "align*")
@@ -94,12 +94,21 @@ stringstream stepone(fstream &in){
 	return temp;
 }
 
+
 stringstream steptwo(stringstream &in, bool hashead){
 	stringstream out;
+	bool ismathmode = false;
 	char c, d;
+	while(in.get(c)&& c != '\n');
 	while(in.get(c)){
 		d = in.peek();
-		if (c == '*' || c == '_')
+		if (c == '$'){
+			ismathmode = !ismathmode;
+			out << c;
+		}
+		else if (c == '_')
+			out << '\\' << c;
+		else if (c == '*' && ismathmode)
 			out << '\\' << c;
 		else if (c == '\\' && (d == '{' || d == '}' || d == '\\'))
 			out << '\\' << c;
@@ -107,6 +116,7 @@ stringstream steptwo(stringstream &in, bool hashead){
 			in.get();
 			in.get(c);
 			if (c == '[' || c == ']'){
+				ismathmode = !ismathmode;
 				out << "\\\\" << c;
 				if (in.peek() == '\n'){
 					in.get();
@@ -131,7 +141,8 @@ stringstream steptwo(stringstream &in, bool hashead){
 }
 
 int main(int argc, char const *argv[]){
-	fstream in, out;
+	ifstream in;
+	ofstream out;
 	if (argc == 2){
 		in.open(argv[1], ios::in);
 		out.open(filename(argv[1], "md").c_str(), ios::out);
