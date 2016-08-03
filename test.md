@@ -25,7 +25,7 @@
 
 6 设$f:\rr^n\to \rr$光滑，则\\[f(x)=f(0)+\partial\_if(0)x^i+\frac{1}{2}g\_{ij}(x)x^ix^j,\\]其中$g\_{ij}$光滑。
 
-*Proof.* 利用微积分基本定理\\[f(x)-f(0)=\int\_0^1f'(tx)\dd t=\int\_0^1\partial\_i f(tx)x^i\dd t=h\_i(x)x^i,\\]可以得到$h\_i(0)=\partial\_i f(0)$，然后再对$h\_i$使用上面的步骤即可得到我们想要的表达式。<div align = right>Q.E.D.</div>
+*Proof.* 利用微积分基本定理\\[f(x)-f(0)=\int\_0^1f'(tx)\dd t=\int\_0^1\partial\_i f(tx)x^i\dd t=h\_i(x)x^i,\\]可以得到$h\_i(0)=\partial\_i f(0)$，然后再对$h\_i$使用上面的步骤即可得到我们想要的表达式。<p align = right>Q.E.D.</p>
 
 7 使用一个局部坐标$\varphi=(x^1,\cdots,x^n)$且$\varphi(p)=0$，可以将上面的引理翻译到流形上。设设$f:U\to \rr$光滑，则在$p$的一个邻域$V$上对任意的$q\in V$成立\\[f(q)=f(p)+\frac{\partial f\circ \varphi^{-1}}{\partial x^i}(p)x^i(q)+\frac{1}{2}g\_{ij}(q)x^i(q)x^j(q),\\]其中$g\_{ij}$在$V$上光滑，以后我们就将那个偏微分记作$\partial\_i f(p)$.
 
@@ -47,7 +47,7 @@ $\mm\_p/\mm\_p^2$确实是一个矢量空间。首先它显然是一个$\calf\_p
 
 以后我们用$\dd\_p(f)$乃至$\dd\_pf$来记$\dd\_p(f\_p)$。实际上，我们可以将$\dd\_p$定义在$\calf\_p$上，设$a$是一个常值芽，补充定义$\dd\_pa=0$，可以看到，此时式\eqref{c1:e1}依旧满足。以后我们就这样来看$\dd\_p:\calf\_p\to T\_p^\*M$，他被称为{\kaishu 外微分}算子。
 
-10 此时\[\dd\_p (fg)=\dd\_p\bigl(\bigl(f-f(p)\bigr)\bigl(g-g(p)\bigr)+f(p)\bigl(g-g(p)\bigr)+\bigl(f-f(p)\bigr)g(p)\bigr)=f(p)\dd\_pg+\dd\_pf g(p).\]
+10 此时\\\[\dd\_p (fg)=\dd\_p\bigl(\bigl(f-f(p)\bigr)\bigl(g-g(p)\bigr)+f(p)\bigl(g-g(p)\bigr)+\bigl(f-f(p)\bigr)g(p)\bigr)=f(p)\dd\_pg+\dd\_pf g(p).\\\]
 
 11 设$f:M\to N$是一个光滑映射，上面的光滑函数层分别为$\calf$和$\calg$。任取$\varphi\in \calg(V)$，可以通过$f^\*\varphi=\varphi\circ f$定义$f^\*\varphi\in \calf(f^{-1}(V))$.
 
@@ -71,8 +71,9 @@ $\mm\_p/\mm\_p^2$确实是一个矢量空间。首先它显然是一个$\calf\_p
 D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 &=v\bigl((f\_p-f(p))(g\_p-g(p))+f(p)(g\_p-g(p))+(f\_p-f(p))g(p)\bigr)\\\
 &=f(p)D\_v(g\_p)+D\_v(f\_p)g(p),
-\end{split}\]
-我们将满足这条性质的线性映射$D\_v\in \calf\_p^*$称为$p$处的导子，所有$p$处的导子构成的空间暂时记作$V\_p$，而他其实和$T\_pM$是同构的。
+\end{split}\\\]
+
+我们将满足这条性质的线性映射$D\_v\in \calf\_p^\*$称为$p$处的导子，所有$p$处的导子构成的空间暂时记作$V\_p$，而他其实和$T\_pM$是同构的。
 
 为了证明这点，任取导子$D\in V\_p$，由于$D(1)=D(1\times 1)=2D(1)$，所以$D(1)=0$，继而靠着$D$的线性性，对于常值函数的芽$a$来说，$D(a)=aD(1)=0$。因为每一个$\calf\_p$中的元素$f\_p$都可以写成$f\_p-f(p)+f(p)$的形式，所以$D(f\_p)=D(f\_p-f(p))$，这就是说，一个导子的性质完全由他在$\mm\_p$上的值决定，这种关系是一对一的。即$\pi\_p:D\mapsto D|\_{\mm\_p}$是一个线性同构。
 
@@ -80,18 +81,18 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 因为有这个同构，所以以后我们用$T\_pM$来标记导子构成的矢量空间，一个导子才是一个切矢量。这样的好处是，我们在具体计算的时候，可以直接在$\calf\_p$上进行而非$\mm\_p$上，特别地，现在对于一个切向量$v$来说，成立$\dd\_pf(v)=v(f\_p)$，这是因为对一个导子$v$来说$v(f\_p)=v(\dd\_pf)$.
 
-18 设$f:M\to N$是一个光滑映射，定义它在$p\in M$处的导数为$T\_pf=f\_{*p}:T\_pM\to T\_{f(p)}N$使得对任意的$v\in T\_p M$和任意的$g\_{f(p)}\in \mm\_{f(p)}$成立$(f\_{*p}v)(g\_{f(p)})=v(f\_p^*g\_{f(p)})$.
+18 设$f:M\to N$是一个光滑映射，定义它在$p\in M$处的导数为$T\_pf=f\_{\*p}:T\_pM\to T\_{f(p)}N$使得对任意的$v\in T\_p M$和任意的$g\_{f(p)}\in \mm\_{f(p)}$成立$(f\_{\*p}v)(g\_{f(p)})=v(f\_p^\*g\_{f(p)})$.
 
-为以后的处理方便，不妨通过等同$\partial\_i$和标准基$e\_i$来等同$T\_p\rr^n$和$\rr^n$。此外，通过坐标卡上的同胚$\varphi$，我们用$\partial\_i$来标记$\varphi^{-1}\_{*p}(e\_i)$，这显然是$T\_pM$处的一组基。
+为以后的处理方便，不妨通过等同$\partial\_i$和标准基$e\_i$来等同$T\_p\rr^n$和$\rr^n$。此外，通过坐标卡上的同胚$\varphi$，我们用$\partial\_i$来标记$\varphi^{-1}\_{\*p}(e\_i)$，这显然是$T\_pM$处的一组基。
 
 
-19 设$f$是在$p$附近的光滑函数，任取$v\in T\_pM$.因为$f\_{*p}:T\_pM\to T\_{f(p)}\rr=\rr$，所以$f\_{*p}(v)$是一个数，故而\\[	f\_{*p}(v)=f\_{*p}(v)(\id\_{\rr})=v\bigl((\id\_{\rr}\circ f)\_p\bigr)=v(f\_p)=\dd\_p f(v).\\]因为对所有的切矢量$v$都成立上式，所以$f\_{*p}=\dd\_p f$.
+19 设$f$是在$p$附近的光滑函数，任取$v\in T\_pM$.因为$f\_{\*p}:T\_pM\to T\_{f(p)}\rr=\rr$，所以$f\_{\*p}(v)$是一个数，故而\\[	f\_{\*p}(v)=f\_{\*p}(v)(\id\_{\rr})=v\bigl((\id\_{\rr}\circ f)\_p\bigr)=v(f\_p)=\dd\_p f(v).\\]因为对所有的切矢量$v$都成立上式，所以$f\_{\*p}=\dd\_p f$.
 
-选定一个局部坐标，因为$\dd\_p x^i(\partial\_j)=\partial\_jx^i(p)=\delta^i\_j$，所以$\dd\_p x^i$就是$\partial\_i$的对偶基。下面我们来计算一个特别的例子，设$f:M\to \rr^n$是一个流形$M$上的矢量值光滑函数，则$f^i:M\to \rr$是一个光滑函数，那么$f\_{*p}=\dd\_pf^i e\_i$，其中$e\_i$是$\rr^n$的标准基。再设$f:\rr^m\to \rr^n$，则$\dd\_pf^i=\partial\_j f^i(p) \dd x^j=\partial\_j f^i(p) e^j$.写成矩阵即\\[(f\_{*p})^{i}\_{\phantom{i}j}=\partial\_j f^i(p),\\]此即$f$的Jacobian.
+选定一个局部坐标，因为$\dd\_p x^i(\partial\_j)=\partial\_jx^i(p)=\delta^i\_j$，所以$\dd\_p x^i$就是$\partial\_i$的对偶基。下面我们来计算一个特别的例子，设$f:M\to \rr^n$是一个流形$M$上的矢量值光滑函数，则$f^i:M\to \rr$是一个光滑函数，那么$f\_{\*p}=\dd\_pf^i e\_i$，其中$e\_i$是$\rr^n$的标准基。再设$f:\rr^m\to \rr^n$，则$\dd\_pf^i=\partial\_j f^i(p) \dd x^j=\partial\_j f^i(p) e^j$.写成矩阵即\\[(f\_{\*p})^{i}\_{\phantom{i}j}=\partial\_j f^i(p),\\]此即$f$的Jacobian.
 
-20 复合函数求导法则：$(f\circ g)\_{*p}=f\_{*g(p)}\circ g\_{*p}$.抽象表现出来是线性映射复合，表现在矩阵（即Jacobian）上就是两个矩阵相乘。
+20 复合函数求导法则：$(f\circ g)\_{\*p}=f\_{\*g(p)}\circ g\_{\*p}$.抽象表现出来是线性映射复合，表现在矩阵（即Jacobian）上就是两个矩阵相乘。
 
-21 设$U$上光滑曲线$\sigma:(-\epsilon,\epsilon)\to U$，在时间为零的时候经过点$p$，即$\sigma(0)=p$，于是$\sigma\_{*0}=\dot\sigma(0)\in T\_pM$. 局部来说，他可以写作\\[\dot{\sigma}(0)=\frac{\dd x^i\circ \sigma}{\dd t}(0)\partial\_i=\dot \sigma^i(0)\partial\_i,\\]当他作用在一个光滑函数上时，写作\\[\dot{\sigma}(0)(f)=\dot \sigma^i(0)\partial\_if(p).\\]对于固定的$f$，$\dot{\sigma}(0)(f)$可以看做$f$沿着$\sigma$在点$p$切矢量的方向导数，实际上，在$\rr^n$中，我们通常将上式写作$\dot{\sigma}(0)(f)=v\cdot \nabla f$，其中$v=\dot \sigma^i(0)e\_i$.
+21 设$U$上光滑曲线$\sigma:(-\epsilon,\epsilon)\to U$，在时间为零的时候经过点$p$，即$\sigma(0)=p$，于是$\sigma\_{\*0}=\dot\sigma(0)\in T\_pM$. 局部来说，他可以写作\\[\dot{\sigma}(0)=\frac{\dd x^i\circ \sigma}{\dd t}(0)\partial\_i=\dot \sigma^i(0)\partial\_i,\\]当他作用在一个光滑函数上时，写作\\[\dot{\sigma}(0)(f)=\dot \sigma^i(0)\partial\_if(p).\\]对于固定的$f$，$\dot{\sigma}(0)(f)$可以看做$f$沿着$\sigma$在点$p$切矢量的方向导数，实际上，在$\rr^n$中，我们通常将上式写作$\dot{\sigma}(0)(f)=v\cdot \nabla f$，其中$v=\dot \sigma^i(0)e\_i$.
 
 22 反过来，给定一个点$p$处的切矢量$v$，我们可以找到一个光滑曲线$\sigma$使得在他点$p$的切矢量就是$v$。这是局部结论，在欧式空间里去证明就可以了。在欧式空间中，$\sigma(t)=p+vt$就是我们需要的光滑曲线。
 
@@ -101,7 +102,7 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 ## 1.2. Submanifold 
 
-25 设$\varphi:M\to N$是一个光滑映射，\no{a}. 称$\varphi$是一个浸入，如果$\varphi\_{*p}$处处非退化。\no{b}. 称$(M,\varphi)$是一个子流形，如果$\varphi$是单的。不是所有浸入都是子流形，比如圆周的参数表示$(\cos t,\sin t)$是一个浸入，但不是单的。
+25 设$\varphi:M\to N$是一个光滑映射，\no{a}. 称$\varphi$是一个浸入，如果$\varphi\_{\*p}$处处非退化。\no{b}. 称$(M,\varphi)$是一个子流形，如果$\varphi$是单的。不是所有浸入都是子流形，比如圆周的参数表示$(\cos t,\sin t)$是一个浸入，但不是单的。
 
 显然，对于光滑流形的一个开子集，他可以继承大流形的流形结构而形成一个新的流形，他是一个子流形，被称为开子流形。
 
@@ -117,27 +118,27 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 28 设$M$和$N$是光滑流形，$f:M\to N$是一个单浸入。我们可以赋予$f(M)$一个微分结构通过把$f:M\to f(M)$做成一个微分同胚。此时，$f(M)$是$N$的正则子流形当且仅当$f$是一个嵌入。
 
-29 反函数定理：设$U\subset \rr^n$是一个开集，映射$f:U\to \rr^n$光滑，如果Jacobian在$p$处非奇异，即$f\_{*p}$可逆，则存在$p$的一个邻域$V\osub U$，使得$f|\_V:V\to f(V)$是一个（光滑）同胚。
+29 反函数定理：设$U\subset \rr^n$是一个开集，映射$f:U\to \rr^n$光滑，如果Jacobian在$p$处非奇异，即$f\_{\*p}$可逆，则存在$p$的一个邻域$V\osub U$，使得$f|\_V:V\to f(V)$是一个（光滑）同胚。
 
 证明见微积分教材，常见的证明有比如压缩映像定理。该定理说明，如果函数局部线性化后性质不错，那么在那点附近性质也不错。由于是局部性质，所以可以直接翻译到流形上没什么改变。
 
-30 流形上的反函数定理：设$M$和$N$的维度相同，映射$f:M\to N$光滑，如果$f\_{*p}$可逆，则存在$p$的一个邻域$U$，使得$f|\_U:U\to f(U)\subset N$是一个（光滑）同胚。换句话说，浸入局部是嵌入。
+30 流形上的反函数定理：设$M$和$N$的维度相同，映射$f:M\to N$光滑，如果$f\_{\*p}$可逆，则存在$p$的一个邻域$U$，使得$f|\_U:U\to f(U)\subset N$是一个（光滑）同胚。换句话说，浸入局部是嵌入。
 
-31 称一族$M$上的光滑函数$\\{f\_i\\}\_{1\leq i\leq n}$在点$p$相互无关，即指$\\{\dd\_p (f\_i)=(f\_i)\_{*p}\in T\_p^*M:1\leq i\leq n\\}$们线性无关。
+31 称一族$M$上的光滑函数$\\{f\_i\\}\_{1\leq i\leq n}$在点$p$相互无关，即指$\\{\dd\_p (f\_i)=(f\_i)\_{\*p}\in T\_p^\*M:1\leq i\leq n\\}$们线性无关。
 
-如果$\\{f\_i\\}\_{1\leq i\leq n}$相互无关，则函数$f=(f\_1,\cdots,f\_n):M\to \rr^n$在点$p$上的导数$f\_{*p}$可逆，所以按照反函数定理，可以在$p$附近找一个领域，使得$f|\_V$是一个$V$到$\rr^n$中开集的同胚，这样$(V,f|\_V)$就是一张坐标卡。如果$\\{f\_i\\}$个数不到$n$，那么补几个进去，照样可以找到一张坐标卡，其中前几个分量是$\\{f\_i\\}$.
+如果$\\{f\_i\\}\_{1\leq i\leq n}$相互无关，则函数$f=(f\_1,\cdots,f\_n):M\to \rr^n$在点$p$上的导数$f\_{\*p}$可逆，所以按照反函数定理，可以在$p$附近找一个领域，使得$f|\_V$是一个$V$到$\rr^n$中开集的同胚，这样$(V,f|\_V)$就是一张坐标卡。如果$\\{f\_i\\}$个数不到$n$，那么补几个进去，照样可以找到一张坐标卡，其中前几个分量是$\\{f\_i\\}$.
 
-32 设$f\_*:V\to W$是一个有限维矢量空间间的线性映射以及他的对偶映射是$f^*:W^*\to V^*$，则$\rank(f\_*)=\rank(f^*)$. 特别地，当$f\_*$是单（满）的时候，$f^*$是满（单）的。
+32 设$f\_\*:V\to W$是一个有限维矢量空间间的线性映射以及他的对偶映射是$f^\*:W^\*\to V^\*$，则$\rank(f\_\*)=\rank(f^\*)$. 特别地，当$f\_\*$是单（满）的时候，$f^\*$是满（单）的。
 
-33 设$\varphi:M\to N$光滑，且$\varphi\_{*p}$是单射。令$(x\_1,\cdots,x\_n)$是$\varphi(p)$附近的一个坐标，那么$x\_i\circ\varphi$是$p$附近的一个坐标。特别地，$\varphi$在$p$附近是一个单射。如果$\varphi\_{*p}$是满射，则$x\_i\circ\varphi$是$p$附近的一个坐标中的一部分。
+33 设$\varphi:M\to N$光滑，且$\varphi\_{\*p}$是单射。令$(x\_1,\cdots,x\_n)$是$\varphi(p)$附近的一个坐标，那么$x\_i\circ\varphi$是$p$附近的一个坐标。特别地，$\varphi$在$p$附近是一个单射。如果$\varphi\_{\*p}$是满射，则$x\_i\circ\varphi$是$p$附近的一个坐标中的一部分。
 
-若$\varphi\_{*p}$是单射，他的对偶映射$\varphi^*\_p$就是满射，于是$\varphi^*\_p(x\_i)\_{*\varphi(p)}=(x\_i\circ\varphi)\_{*p}=\dd\_p(x\_i\circ \varphi)$张成了$T\_p^*M$，在其中选出一组极大线性无关组（不妨设为前$m$个），这就构成了$p$附近的一组坐标。而$(x\_1,\cdots,x\_m)\circ \varphi$局部是同胚，所以$\varphi$局部是单射。
+若$\varphi\_{\*p}$是单射，他的对偶映射$\varphi^\*\_p$就是满射，于是$\varphi^\*\_p(x\_i)\_{\*\varphi(p)}=(x\_i\circ\varphi)\_{\*p}=\dd\_p(x\_i\circ \varphi)$张成了$T\_p^\*M$，在其中选出一组极大线性无关组（不妨设为前$m$个），这就构成了$p$附近的一组坐标。而$(x\_1,\cdots,x\_m)\circ \varphi$局部是同胚，所以$\varphi$局部是单射。
 
-若$\varphi\_{*p}$是满射，他的对偶映射$\varphi^*\_p$就是单射，于是$\varphi^*\_p\dd\_{\varphi(p)}x\_i=\dd\_p(x\_i\circ \varphi)$相互独立，一般来说，他数量不够构成坐标，但是却可以构成坐标中的一部分。
+若$\varphi\_{\*p}$是满射，他的对偶映射$\varphi^\*\_p$就是单射，于是$\varphi^\*\_p\dd\_{\varphi(p)}x\_i=\dd\_p(x\_i\circ \varphi)$相互独立，一般来说，他数量不够构成坐标，但是却可以构成坐标中的一部分。
 
-34 设$f:M\to N$是一个光滑映射，则$\rank\_p f$被定义为$\rank\_p f\_{*p}$.取$p$和$f(p)$附近的坐标$\varphi$和$\psi$且使得$\varphi(p)=0$，则$f$在点$p$的秩就是Jacobian矩阵$(\psi\circ f \circ \varphi^{-1})\_{*0}$的秩。
+34 设$f:M\to N$是一个光滑映射，则$\rank\_p f$被定义为$\rank\_p f\_{\*p}$.取$p$和$f(p)$附近的坐标$\varphi$和$\psi$且使得$\varphi(p)=0$，则$f$在点$p$的秩就是Jacobian矩阵$(\psi\circ f \circ \varphi^{-1})\_{\*0}$的秩。
 
-选取$f(p)$附近的坐标$\psi$，则$\psi\circ f:M\to \rr^n$，不妨将其写作$(f\_1,\cdots,f\_n)$，则$\rank\_p f$就是${\dd\_pf\_1,\cdots,\dd\_pf\_n}$张成的线性空间的维度。实际上，因为这是局部结果，所以可以假设$N=\rr^n$，此时$f\_{*p}=(\dd\_pf\_1,\cdots,\dd\_pf\_n)$。
+选取$f(p)$附近的坐标$\psi$，则$\psi\circ f:M\to \rr^n$，不妨将其写作$(f\_1,\cdots,f\_n)$，则$\rank\_p f$就是${\dd\_pf\_1,\cdots,\dd\_pf\_n}$张成的线性空间的维度。实际上，因为这是局部结果，所以可以假设$N=\rr^n$，此时$f\_{\*p}=(\dd\_pf\_1,\cdots,\dd\_pf\_n)$。
 
 35 \label{ranktheo}设$M$是一个$m$维流形且$f:M\to N$是一个光滑映射，如果存在常数$l$使得$\rank\_p f$处处等于$l$，那么对于$q\in N$，$f^{-1}(q)$要么是空集，要么是$M$的一个正则子流形，维度为$m-l$。
 
@@ -152,7 +153,7 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 37 设$X$是一个$U$上的矢量场，如果$Xf$对任意的光滑函数$f$也是光滑的，那么$X$是一个光滑矢量场。这个命题可以看作矢量场光滑性的一个坐标无关的定义。
 
-38 设$f:M\to N$是一个光滑单射，而$X$是$M$上的一个光滑矢量场，则$f\_*X:p\mapsto f\_{*f^{-1}(p)}X\_{f^{-1}(p)}$是$N$上的一个矢量场。因为$(f\_*X)g=X(g\circ f)$成立，所以这也是一个光滑矢量场。
+38 设$f:M\to N$是一个光滑单射，而$X$是$M$上的一个光滑矢量场，则$f\_\*X:p\mapsto f\_{\*f^{-1}(p)}X\_{f^{-1}(p)}$是$N$上的一个矢量场。因为$(f\_\*X)g=X(g\circ f)$成立，所以这也是一个光滑矢量场。
 
 下面我们用（光滑）纤维丛的语言来抽象地定义场。
 
@@ -165,9 +166,9 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 40 设$(E, B, \pi, F)$是一个纤维丛，设$U\subset B$是一个开集，则$U$上的光滑截面(section)定义为一个光滑映射$s:B\to E$满足$\pi\circ s=\id\_U$.$E$上所有截面的集合通常记做$\Gamma(E)$.
 
-[htp]
+\begin{figure}[htp]
 \centering
-	[scale=1]
+	\begin{tikzpicture}[scale=1]
 	\draw (-2,-0.3)--(2,-0.3)--(2,1)--(-2,1)--cycle;
 	\node [label=left:$F$] (F) at (-1.8,0.35) {};
 	\node [label=below:$M$] (M1) at (1.2,-0.2) {};
@@ -175,23 +176,24 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 	\node [label=below:$E$] (E) at (0.7,0.7) {};
 	\draw (-2,-1.3)--(2,-1.3);
 	\node [fill=black, inner sep=1pt, label=below:$p$] (p) at (-0.3,-1.3) {};
-	\draw [color=black, domain=-1.6:1.6] plot (\x,{0.3\*sin(2\*\x r)+0.5});
+	\draw [color=black, domain=-1.6:1.6] plot (\x,{0.3*sin(2*\x r)+0.5});
 	
 	\node [fill=black, inner sep=1pt, label=right:\tiny$s(p)$] (s) at (-0.3,0.3306) {};
 	\draw (-0.3,-0.5)node[below]{\small$\pi^{-1}(p)$}--(-0.3,1.2);
 \end{tikzpicture}
 \caption{Trivial Bundle and its Section}
+\end{figure}
 
 一个纤维丛不一定有整体截面，但是一定有局部截面，因为纤维丛在局部都是平凡丛，而平反丛一定有截面，比如常值截面$s(x)=a\in F$。对于一个纤维丛，直观来看，就是在底流形$B$每一点$p$，都放一个$\pi^{-1}(p)\cong F$，而所谓的截面，就是在每一点$p$，都选定$\pi^{-1}(p)\cong F$中的一个元素，这其实也就是矢量场的基本想法。
 
 反过来，如果给定了每一点的纤维，则我们有可能拼出一个纤维丛。切丛和余切丛正是如此定义的。
 
-41 流形$M$的切丛(tangent bundle) $TM$被在集合上被定义为\\[TM=\coprod\_{x\in M}T\_xM=\bigcup\_{x\in M} \left\\{x\right\\}\times T\_xM=\bigcup\_{x\in M} \left\\{(x, y)\vert\; y\in T\_xM\right\\}.\\]余切丛(cotangent bundle)$T^*M$在集合上被被定义为\\[T^*M=\coprod\_{x\in M}T^*\_xM=\bigcup\_{x\in M} \left\\{x\right\\}\times T^*\_xM=\bigcup\_{x\in M} \left\\{(x, y)\vert\; y\in T\_x^*M\right\\}.\\]
+41 流形$M$的切丛(tangent bundle) $TM$被在集合上被定义为\\[TM=\coprod\_{x\in M}T\_xM=\bigcup\_{x\in M} \left\\{x\right\\}\times T\_xM=\bigcup\_{x\in M} \left\\{(x, y)\vert\; y\in T\_xM\right\\}.\\]余切丛(cotangent bundle)$T^\*M$在集合上被被定义为\\[T^\*M=\coprod\_{x\in M}T^\*\_xM=\bigcup\_{x\in M} \left\\{x\right\\}\times T^\*\_xM=\bigcup\_{x\in M} \left\\{(x, y)\vert\; y\in T\_x^\*M\right\\}.\\]
 
 
 42 来看切丛，$M$显然是底流形，而$\pi$也可以显然地通过把$(p,v)\in TM$映射到$p\in M$来定义。剩下的，我们要赋予$TM$一个光滑流形结构，然后检验是否满足纤维丛的定义。
 
-为此，对于$p\in M$，找一个坐标卡$(U,\varphi)$，在这张卡内，$T\_qM$通过$\varphi\_{*q}$同构于$\rr^n$，我们这样选取$\pi^{-1}(U)$上的微分结构，使得他通过$\id\_U\times \varphi\_*$光滑同胚于$U \times \rr^n$，这样$TM$就有了一个坐标卡$(\pi^{-1}(U),\varphi\times \varphi\_*)$，于是他是一个光滑流形，也是一个以$M$为底，$\rr^n$为纤维的纤维丛。同样地，$T^*M$也是一个纤维丛。
+为此，对于$p\in M$，找一个坐标卡$(U,\varphi)$，在这张卡内，$T\_qM$通过$\varphi\_{\*q}$同构于$\rr^n$，我们这样选取$\pi^{-1}(U)$上的微分结构，使得他通过$\id\_U\times \varphi\_\*$光滑同胚于$U \times \rr^n$，这样$TM$就有了一个坐标卡$(\pi^{-1}(U),\varphi\times \varphi\_\*)$，于是他是一个光滑流形，也是一个以$M$为底，$\rr^n$为纤维的纤维丛。同样地，$T^\*M$也是一个纤维丛。
 
 43 所以$U$上的光滑切矢量场就是$TM$的$U$上的一个光滑截面。
 
@@ -203,11 +205,11 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 46 设$X$是$U$上的光滑矢量场，如果$X\_p\neq 0$，则存在一个$p$的邻域$V$，在$V$上存在一组坐标使得$X$可以写作$\partial\_1$.
 
-\*Proof.\* 	完全是局部的结果，我们就在欧式空间里面证明，即找一组新的坐标来把$X=X^i\partial\_i$变成$\partial'\_1$. 此外，如果我们证明了可以写作$a \partial\_1$，那么再令$x'$是$\partial x^1/\partial x'^1=a$的解（这个解积个分就出来了），那么自然就有$\partial'\_1=a\partial\_1$.
+*Proof.* 	完全是局部的结果，我们就在欧式空间里面证明，即找一组新的坐标来把$X=X^i\partial\_i$变成$\partial'\_1$. 此外，如果我们证明了可以写作$a \partial\_1$，那么再令$x'$是$\partial x^1/\partial x'^1=a$的解（这个解积个分就出来了），那么自然就有$\partial'\_1=a\partial\_1$.
 
 不妨假设$X^1$在$p$的某个邻域不为零，现在我们来解常微分方程组\\[	\frac{\dd x^i}{\dd x^1}=\frac{X^n(x^1,\cdots,x^n)}{X^1(x^1,\cdots,x^n)},\\]给定初值为$\\{\varphi^i(0;v^2,\cdots,v^n)=v^i:2\leq i \leq n\\}$，我们知道解$\\{x^i=\varphi^i(x^1;v^2,\cdots,v^n)\\}\_{2\leq i \leq n}$局部存在且光滑依赖于初值$\\{v^2,\cdots,v^n\\}$以及$x^1$，所以我们选取新坐标$\\{v^1,v^2,\cdots,v^n\\}$使得\\[	\\{x^1,x^2,\cdots,x^n\\}=\\{v^1,\varphi^2(v^1,\cdots,v^n),\cdots,\varphi^n(v^1,\cdots,v^n)\\},\\]容易计算他在$v^1=0$处的Jacobian行列式$\det(\partial x/\partial v)=1$，所以这是一个合理的坐标选取。
 
-最后，注意到$X^i=X^1 \dd x^i/\dd x^1=X^1 \dd x^i/\dd v^1$，所以\\[	X=X^i\partial\_i=X^1 \frac{\dd x^i}{\dd v^1}\frac{\partial}{\partial x^i}=X^1\partial'\_1.\\]<div align = right>Q.E.D.</div>
+最后，注意到$X^i=X^1 \dd x^i/\dd x^1=X^1 \dd x^i/\dd v^1$，所以\\[	X=X^i\partial\_i=X^1 \frac{\dd x^i}{\dd v^1}\frac{\partial}{\partial x^i}=X^1\partial'\_1.\\]<p align = right>Q.E.D.</p>
 设$X$是$U$上的光滑矢量场，对$U$上的每一点$p$，都可以在$p$附近找到他的一条光滑积分曲线$\sigma\_p$，上面的点$\sigma\_p(t)$我们也记作$\sigma\_t(p)$，这样我们就得到了一个新的一族映射$\\{\sigma\_t:U\to U\\}$，当$t=0$的时候，$\sigma\_0=\id$.这样的一族映射$\\{\sigma\_t\\}$被称为矢量场$X$的{\kaishu 流}。如果需要明确是那个矢量场的时候写作$\\{\sigma^X\_t\\}$. 由微分方程解的唯一性可以发现$\sigma\_t\circ \sigma\_s=\sigma\_{s+t}$.
 
 对于一个矢量场，整体流的存在性是不能保证的，比如对$t=1$的时候，是否对每一个$p$变换$\sigma\_1$都有意义？但是，至少在局部，我们可以保证在一定范围内的参数都是有意义的，对于局部的问题，这个存在性已经基本够使了。
@@ -230,18 +232,18 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 因为$g$是光滑函数，我们在$(0,0)$局部展开他，求导就可以得到系数。显然，他到二阶为止的导数都为$0$，并且$\partial\_s^2g(0,0)=\partial\_t^2g(0,0)=0$，所以他最低阶不为零的只可能是$\partial\_s\partial\_t g(0,0)$，这就是说，我们要求$\lim\_{s,t\to 0}g(s,t)/st$.
 
-49 在$t$很小的时候，$f(\sigma\_t^X p)=f(p)+tXf(p)+o(t^2)$.为了证明他，只要求$p$处的导数就行了，设$\sigma^X(t)$是$\sigma^X(0)=p$的$X$的积分曲线，则\\[	\frac{\dd}{\dd t}\biggr|\_{t=0}f(\sigma\_t^X p)=\frac{\dd}{\dd t}\biggr|\_{t=0}f\circ \sigma^X (t)=f\_{* p}X=Xf(p).\\]
+49 在$t$很小的时候，$f(\sigma\_t^X p)=f(p)+tXf(p)+o(t^2)$.为了证明他，只要求$p$处的导数就行了，设$\sigma^X(t)$是$\sigma^X(0)=p$的$X$的积分曲线，则\\[	\frac{\dd}{\dd t}\biggr|\_{t=0}f(\sigma\_t^X p)=\frac{\dd}{\dd t}\biggr|\_{t=0}f\circ \sigma^X (t)=f\_{\* p}X=Xf(p).\\]
 
 所以（暂时在记号上略去高阶项）\\[f(\sigma^Y\_t\circ\sigma^X\_s(p))=f(\sigma^X\_s(p))+tYf(\sigma^X\_s(p))=f(p)+sXf(p)+tY(\sigma^X\_s\circ f(p)),\\]以及\\[g(s,t)=sXf(p)+tY(\sigma^X\_s\circ f(p))-tYf(p)-sX(\sigma^Y\_t\circ f(p)),\\]其中\\[Y(\sigma^X\_s\circ f(p))-Yf(p)=sX(Y(f))(p),\\]所以\\[g(s,t)=st\bigl(X(Y(f))(p)-Y(X(f))(p)\bigr),\\]这就是说$\partial\_s\partial\_t g(0,0)=X(Y(f))(p)-Y(X(f))(p)$.
 
 50 定义两个矢量场$X$, $Y$的Lie括号为$[X,Y]$，他满足$[X,Y](f)=X(Y(f))-Y(X(f))$。
 
 如果采用局部表示$X=X^i\partial\_i$和$X=Y^i\partial\_j$，则我们可以计算出
-\begin{align\*}
+\begin{align*}
 [X,Y](f)&=X^i\partial\_i(Y^j\partial\_j f)-Y^i\partial\_i(X^j\partial\_j f)\\\
 &=X^i\partial\_iY^j\partial\_j f-Y^i\partial\_i X^j\partial\_j f\\\
 &=(X^i\partial\_iY^j-Y^i\partial\_i X^j)\partial\_jf.
-\end{align\*}
+\end{align*}
 因此，尽管形式上是二阶的，但$[X,Y]$还是一个切矢量场，局部写作$[X,Y]=(X^i\partial\_iY^j-Y^i\partial\_i X^j)\partial\_j=(X(Y^j)-Y(X^j))\partial\_j$.
 
 
@@ -258,24 +260,25 @@ D\_v(f\_pg\_p)&=v(f\_pg\_p-f(p)g(p))\\\
 
 当然，这个结论可以更加形式地证明他，如果不信任上面的直观想法，则可以参看任何一本微分流形的教材，我这里就略去了。
 
-54 令$\varphi$是流形$M$上的光滑可逆变换，设矢量场$X$的流为$\sigma\_t$，则$\varphi\_*X$的流为$\varphi\circ \sigma\_t\circ\varphi$.
+54 令$\varphi$是流形$M$上的光滑可逆变换，设矢量场$X$的流为$\sigma\_t$，则$\varphi\_\*X$的流为$\varphi\circ \sigma\_t\circ\varphi$.
 
-设在$p$处的切矢量为$X\_p$，经过$p$的$X$的积分曲线为$\sigma(t)$，使用变换$\varphi$，变成了$q=\varphi(p)$，$q$处的切矢量$\varphi\_{*p}X\_p=(\varphi\_*X)\_q$以及积分曲线$\varphi(\sigma(t))=\varphi(\sigma\_t q)=\varphi\circ\sigma\_t\circ \varphi^{-1}(p)$.此即结论。
+设在$p$处的切矢量为$X\_p$，经过$p$的$X$的积分曲线为$\sigma(t)$，使用变换$\varphi$，变成了$q=\varphi(p)$，$q$处的切矢量$\varphi\_{\*p}X\_p=(\varphi\_\*X)\_q$以及积分曲线$\varphi(\sigma(t))=\varphi(\sigma\_t q)=\varphi\circ\sigma\_t\circ \varphi^{-1}(p)$.此即结论。
 
-55 所以，$\varphi\_*X=X$当且仅当$\varphi\circ \sigma^X\_t=\sigma^X\_t\circ \varphi$成立。
+55 所以，$\varphi\_\*X=X$当且仅当$\varphi\circ \sigma^X\_t=\sigma^X\_t\circ \varphi$成立。
 
-56 直接的计算，我们有：\\[	[X,Y]=\lim\_{t\to 0}\frac{1}{t}\bigl(Y-(\sigma\_t^X)\_*Y\bigr).\\]
+56 直接的计算，我们有：\\[	[X,Y]=\lim\_{t\to 0}\frac{1}{t}\bigl(Y-(\sigma\_t^X)\_\*Y\bigr).\\]
 
-所以，如果$\sigma\_t^X$和$\sigma\_s^Y$可交换，即$\sigma\_t^X\circ \sigma\_s^Y=\sigma\_s^Y\circ \sigma\_t^X$，则$(\sigma\_t^X)\_*Y=Y$以及$[X,Y]=0$.
+所以，如果$\sigma\_t^X$和$\sigma\_s^Y$可交换，即$\sigma\_t^X\circ \sigma\_s^Y=\sigma\_s^Y\circ \sigma\_t^X$，则$(\sigma\_t^X)\_\*Y=Y$以及$[X,Y]=0$.
 
-设$\varphi:M\to N$是一个光滑映射，$X$和$Y$分布是$M$和$N$上的光滑函数，称他们是$\varphi$相关的，如果$\varphi\_*X(f)=Y(f)\circ \varphi$对任意光滑函数$f$成立。局部来看，$X\_p(f\circ \varphi)=Y\_{\varphi(p)}(f)$.
+设$\varphi:M\to N$是一个光滑映射，$X$和$Y$分布是$M$和$N$上的光滑函数，称他们是$\varphi$相关的，如果$\varphi\_\*X(f)=Y(f)\circ \varphi$对任意光滑函数$f$成立。局部来看，$X\_p(f\circ \varphi)=Y\_{\varphi(p)}(f)$.
 
 若$X\_1$与$Y\_1$是$\varphi$相关的，$X\_2$与$Y\_2$是$\varphi$相关的，则$[X\_1,X\_2]$和$[Y\_1,Y\_2]$是$\varphi$相关的，因为\\[\begin{split}
-\varphi\_*[X\_1,X\_2](f)&=X\_1(X\_2(f\circ \varphi))-[1\leftrightarrow 2]\\\
+\varphi\_\*[X\_1,X\_2](f)&=X\_1(X\_2(f\circ \varphi))-[1\leftrightarrow 2]\\\
 &=X\_1(Y\_2(f)\circ\varphi)-[1\leftrightarrow 2]\\\
 &=Y\_1(Y\_2(f))\circ \varphi-[1\leftrightarrow 2]\\\
 &=[Y\_1,Y\_2](f)\circ \varphi.
-\end{split}\]
+\end{split}\\\]
+
 因为对于一个同胚而言，$\varphi\_\*(X)$被定义为$p\mapsto \varphi\_{\*\varphi^{-1}(p)}X\_{\varphi^{-1}(p)}$，或者$\varphi(p)\mapsto \varphi\_{\*p}X\_p$，这就是说\\[X\_p(f)=\varphi\_\*(X)\_{\varphi(p)}(f),\\]因此$X$与$\varphi\_\*X$是$\varphi$相关的。
 
 
@@ -347,7 +350,7 @@ D(\omega)(X,Y)=X(\omega(Y))-Y(\omega(X))-\omega([X,Y]).
 
 67 在$U$上的一个光滑$k$-形式被定义为$\Omega^k$在$U$上的一个光滑截面。所有$U$上的光滑$k$-形式的集合记做$\Gamma(\Omega^k,U)$.显然，$U$上的光滑函数可以看成一个光滑$0$-形式，一个光滑余切矢量场是一个光滑1-形式。如果$\omega$是一个光滑$1$-形式，则$D(\omega)$是一个光滑$2$-形式。下面我们所称的形式都是光滑的，我们将省略光滑二字。
 
-68 设分布$L$由$\\{X\_i:1\leq i \leq r\\}$张成，且$L=\ker(\omega\_{r+1},\cdots,\omega\_n)$，如果$D(\omega)(X\_i,X\_j)=0$成立，则$D(\omega)$可以写作\[
+68 设分布$L$由$\\{X\_i:1\leq i \leq r\\}$张成，且$L=\ker(\omega\_{r+1},\cdots,\omega\_n)$，如果$D(\omega)(X\_i,X\_j)=0$成立，则$D(\omega)$可以写作\\\[
 D(\omega)=\sum\_{i=r+1}^n \psi\_i\wedge \omega\_i,\\]其中$\psi\_i$是一次微分式.
 
 实际上，局部地$\\{\omega\_i:1\leq i\leq n\\}$构成一组基，则\\[\dd \omega = \sum\_{i=r+1}^n \psi\_i\wedge w\_i +\sum\_{i,j=1}^r a\_{ij}\omega\_i\wedge \omega\_j,\\]其中$\psi\_i$是一次微分式，而$a\_{ij}$是光滑函数，且关于指标是反对称的。因为$\omega\_i(X\_j)=\delta\_{ij}$，所以\\[0=\dd \omega(X\_i,X\_j)=\sum\_{p,q=1}^r a\_{pq}\omega\_p\wedge \omega\_q(X\_i,X\_j)=\sum\_{p,q=1}^r a\_{pq}(\delta\_{ip}\delta\_{jq}-\delta\_{jp}\delta\_{iq})=2a\_{ij}.\\]
@@ -401,11 +404,11 @@ D(\omega)=\sum\_{i=r+1}^n \psi\_i\wedge \omega\_i,\\]其中$\psi\_i$是一次微
 
 77 \label{localdef}利用\pararef{localpro}，设$V\osub U$，如果$U$上存在外微分形式$\dd$，则他诱导出了$V$上的一个外微分形式$\dd\_V$。并且，再设$W\osub W$，则$\dd$在$W$上诱导的$\dd\_W$和$\dd\_V$在$W$诱导的$\dd\_{VW}$是相同的。此外$(\dd\_V \omega)|\_W=\dd\_W (\omega|\_W)$对任意的$V$上的$k$-形式$\omega$成立。
 
-\*Proof.\* 和上面的想法差不多，利用\pararef{regular}，我们可以找一个开覆盖。然后在每个开覆盖中的开集$W$上，同\pararef{localform}利用单位分解找一个光滑函数$h\_W$，使得$h\_W\omega$成为$U$上的光滑$k$-形式，定义$(\dd\_V \omega)|\_{W}=\dd (h\_W\omega)|\_{W}$.
+*Proof.* 和上面的想法差不多，利用\pararef{regular}，我们可以找一个开覆盖。然后在每个开覆盖中的开集$W$上，同\pararef{localform}利用单位分解找一个光滑函数$h\_W$，使得$h\_W\omega$成为$U$上的光滑$k$-形式，定义$(\dd\_V \omega)|\_{W}=\dd (h\_W\omega)|\_{W}$.
 
 设$W'$是开覆盖中的另外的开集，且$W\cap W'\neq \varnothing$。由于$(h\_W\omega)|\_{W\cap W'}=(h\_{W'}\omega)|\_{W\cap W'}$，因为\pararef{localpro}，则\\[\dd (h\_W\omega)|\_{W\cap W'}=\dd (h\_{W'}\omega)|\_{W\cap W'},\\]所以\\[((\dd\_V \omega)|\_{W})|\_{W\cap W'}=((\dd\_V \omega)|\_{W'})|\_{W\cap W'}\\]保证了$(\dd\_V \omega)|\_W$在相交的开集上是相同的，这就使得我们可以黏结他们定义出一个$V$上的$(k+1)$-形式$\dd\_V \omega$. 容易检验$\dd\_V$满足所有外微分的性质。至于$\dd\_W=\dd\_{VW}$，从构造来看，这是显然的。
 
-最后我们来检验等式$(\dd\_V \omega)|\_W=\dd\_W (\omega|\_W)$，对$W$利用\pararef{regular}找个开覆盖，在每一个开集$X$上，把上式左边限制到$X$上即$((\dd\_V \omega)|\_W)|\_X=(\dd\_V \omega)|\_X=\dd(h\_X\omega)$，同样，右边限制到$X$上即$(\dd\_W (\omega|\_W))|\_X=\dd(h\_X\omega|\_W)=\dd(h\_X\omega)$，所以等式成立。<div align = right>Q.E.D.</div>
+最后我们来检验等式$(\dd\_V \omega)|\_W=\dd\_W (\omega|\_W)$，对$W$利用\pararef{regular}找个开覆盖，在每一个开集$X$上，把上式左边限制到$X$上即$((\dd\_V \omega)|\_W)|\_X=(\dd\_V \omega)|\_X=\dd(h\_X\omega)$，同样，右边限制到$X$上即$(\dd\_W (\omega|\_W))|\_X=\dd(h\_X\omega|\_W)=\dd(h\_X\omega)$，所以等式成立。<p align = right>Q.E.D.</p>
 
 78 设$W\subset V$是$U$中的开集，以及$\rho^k\_{VW}$和$\rho^{k+1}\_{VW}$分别是$k$-形式和$(k+1)$-形式的限制映射。设$\omega$是$V$上的任意$k$-形式，由于$\rho^{k+1}\_{VW}\circ \dd\_V (\omega)=(\dd\_V \omega)|\_W=\dd\_W (\omega|\_W)=\dd\_W \circ \rho^k\_{VW}(\omega)$，所以我们有\\[\dd\_W\circ \rho^k\_{VW}=\rho^{k+1}\_{VW}\circ \dd\_V.\\]换句话说，$\dd$诱导了预层$U\mapsto \Gamma(\Omega^k,U)$和预层$U\mapsto \Gamma(\Omega^{k+1},U)$间的自然变换（或者叫做函子间的态射）。
 
@@ -417,17 +420,17 @@ D(\omega)=\sum\_{i=r+1}^n \psi\_i\wedge \omega\_i,\\]其中$\psi\_i$是一次微
 
 80 在流形$M$上，外微分算子$\dd$存在且唯一。
 
-\*Proof.\* 有了上面这些铺垫，我们只要在局部证明其唯一存在即可，然后把他拼起来，就像Proposition \pararef{localdef}做的那样。首先证明局部唯一性，为此当然假设$\dd$是存在的。在局部，我们找一族坐标，对于$k$-形式，他写作\\[\omega=\sum\_{i\_1,\cdots ,i\_k} a\_{i\_1\cdots i\_k}\dd x^{i\_{1}}\wedge\cdots\wedge x^{i\_{k}},\\]由于$\dd$是线性算子，我们可以只考虑\\[\omega=a\dd x^{1}\wedge\cdots\wedge \dd x^{k}.\\]
+*Proof.* 有了上面这些铺垫，我们只要在局部证明其唯一存在即可，然后把他拼起来，就像Proposition \pararef{localdef}做的那样。首先证明局部唯一性，为此当然假设$\dd$是存在的。在局部，我们找一族坐标，对于$k$-形式，他写作\\[\omega=\sum\_{i\_1,\cdots ,i\_k} a\_{i\_1\cdots i\_k}\dd x^{i\_{1}}\wedge\cdots\wedge x^{i\_{k}},\\]由于$\dd$是线性算子，我们可以只考虑\\[\omega=a\dd x^{1}\wedge\cdots\wedge \dd x^{k}.\\]
 
 由于Leibniz法则，\\[\dd \omega=\dd a \wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}+a\dd(\dd x^{1}\wedge\cdots\wedge \dd x^{k}),\\]对于第二项，使用Leibniz法则，以及$x^1$是光滑函数，所以有的$\dd^2 x^1=0$，于是\\[\dd(\dd x^{1}\wedge\cdots\wedge \dd x^{k})=-\dd x^{1}\wedge\dd(\dd x^{2}\wedge\cdots\wedge \dd x^{k}),\\]这样进行下去就知道他是零。于是\\[\dd \omega=\dd a \wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k},\\]这样$\dd$在局部的表现完全由他那些性质唯一决定，唯一性得证。
 
 剩下的存在性，我们就把上面的过程反过来，在局部的$k$-形式写作\\[\omega|\_U=\sum\_{i\_1,\cdots ,i\_k} a\_{i\_1\cdots i\_k}\dd x^{i\_{1}}\wedge\cdots\wedge x^{i\_{k}},\\]则定义其外微分为\\[\dd(\omega|\_U)=\sum\_{i\_1,\cdots ,i\_k} \dd a\_{i\_1\cdots i\_k}\wedge\dd x^{i\_{1}}\wedge\cdots\wedge x^{i\_{k}},\\]不难检验外微分的性质都可以得到满足。这样我们就在局部证明了外微分的存在性。
 
-最后，由于$(\dd(\omega|\_U))|\_{U\cap V}=\dd(\omega|\_U|\_{U\cap V})=\dd(\omega|\_V|\_{U\cap V})=(\dd(\omega|\_V))|\_{U\cap V}$，所以我们可以将局部定义的外微分算子粘起来得到流形$M$上的一个外微分算子。由于外微分算子的局部唯一性，所以也就得到了他的整体唯一性。<div align = right>Q.E.D.</div>
+最后，由于$(\dd(\omega|\_U))|\_{U\cap V}=\dd(\omega|\_U|\_{U\cap V})=\dd(\omega|\_V|\_{U\cap V})=(\dd(\omega|\_V))|\_{U\cap V}$，所以我们可以将局部定义的外微分算子粘起来得到流形$M$上的一个外微分算子。由于外微分算子的局部唯一性，所以也就得到了他的整体唯一性。<p align = right>Q.E.D.</p>
 
 81 虽然是一个很简单的命题，但是很重要：$\dd^2=0$.
 
-\*Proof.\* 局部对单项式证明即可，设$\omega=a\dd x^{1}\wedge\cdots\wedge \dd x^{k}$，则\\[\dd \omega=\dd a\wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}\\]以及\\[\dd^2 \omega=\dd^2 a\wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}-\dd a\wedge \dd^2 x^{1}\wedge\cdots\wedge \dd x^{k}+\cdots=0.\\]<div align = right>Q.E.D.</div>
+*Proof.* 局部对单项式证明即可，设$\omega=a\dd x^{1}\wedge\cdots\wedge \dd x^{k}$，则\\[\dd \omega=\dd a\wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}\\]以及\\[\dd^2 \omega=\dd^2 a\wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}-\dd a\wedge \dd^2 x^{1}\wedge\cdots\wedge \dd x^{k}+\cdots=0.\\]<p align = right>Q.E.D.</p>
 
 82 我们将$\dd \omega=0$的形式$\omega$称为闭形式，将$\omega=\dd \eta$的形式$\omega$称为恰当形式，则这一命题告诉我们，恰当形式一定是闭形式，反之不一定。我们定义$H^k(M)=\ker(d\_k)/\im(d\_{k-1})$为流形$M$的第$k$个上同调群，其中模的运算是看做加法群的商群运算，这个$H^k(M)$即表征了闭的$k$-形式在除去一个恰当形式后的等价类。此外约定当$k<0$的时候，$H^k(U)=0$.
 
@@ -443,27 +446,27 @@ D(\omega)=\sum\_{i=r+1}^n \psi\_i\wedge \omega\_i,\\]其中$\psi\_i$是一次微
 &\omega\bigl([X\_i,X\_j],X\_1,\cdots,X\_{i-1},X\_{i+1},\cdots,X\_{j-1},X\_{j+1},\cdots,X\_{k+1}\bigr),
 \end{split}\\]就是说，头上带帽等于把他去掉。这个式子可以反过来拿来定义$\dd$，而且确实是一个坐标无关的定义。我们并没有那么做，因为就实际计算而言，更多时候我们并不会把形式作用在所有的光滑切矢量场上。
 
-84 设$f:M\to N$，我们前面已经谈到了，这个$f$在0-形式，即光滑函数之间诱导了一个$f^*$（被称为一个拉回），即$f^*g=g\circ f$. 对于$1$-形式，由\pararef{f\*d=df\*}，我们知道了$f^*\dd g=\dd (f^* g)$，对比矢量场之间$f\_*$的定义还需要$f$是单射，这里1-形式之间的$f^*$则没有这个限制。
+84 设$f:M\to N$，我们前面已经谈到了，这个$f$在0-形式，即光滑函数之间诱导了一个$f^\*$（被称为一个拉回），即$f^\*g=g\circ f$. 对于$1$-形式，由\pararef{f*d=df*}，我们知道了$f^\*\dd g=\dd (f^\* g)$，对比矢量场之间$f\_\*$的定义还需要$f$是单射，这里1-形式之间的$f^\*$则没有这个限制。
 
-85 通过$(f^*\omega)\_p=\omega\_{f(p)}\bigl(f\_{*p}(X\_1)\_p,\cdots,f\_{*p}(X\_k)\_p\bigr)$，我们可以定义出$k$-形式之间的$f^*$.
+85 通过$(f^\*\omega)\_p=\omega\_{f(p)}\bigl(f\_{\*p}(X\_1)\_p,\cdots,f\_{\*p}(X\_k)\_p\bigr)$，我们可以定义出$k$-形式之间的$f^\*$.
 
-86 所以，很容易检验，$f^*(\omega\wedge \eta)=(f^*\omega)\wedge (f^*\eta)$.
+86 所以，很容易检验，$f^\*(\omega\wedge \eta)=(f^\*\omega)\wedge (f^\*\eta)$.
 
-实际上，这个式子也可以反过来定义$k$-形式之间的$f^*$.可是这样定义可能会遇到一些技术性问题，比如一个$k$-形式大范围来说是否一定能写成一些比较低阶的形式楔积并线性组合而成？如果不，怎么通过上式定义？这个问题的回答是，类似\pararef{localpro}，拉回是一个局部算符，即如果$\omega$在局部为零，则$f^*\omega$也在局部为零，所以我们可以不从大范围考虑这个问题。
+实际上，这个式子也可以反过来定义$k$-形式之间的$f^\*$.可是这样定义可能会遇到一些技术性问题，比如一个$k$-形式大范围来说是否一定能写成一些比较低阶的形式楔积并线性组合而成？如果不，怎么通过上式定义？这个问题的回答是，类似\pararef{localpro}，拉回是一个局部算符，即如果$\omega$在局部为零，则$f^\*\omega$也在局部为零，所以我们可以不从大范围考虑这个问题。
 
-87 按照上面这种定义方式，假设$f^*$存在，则$f^*$是一个局部算符。
+87 按照上面这种定义方式，假设$f^\*$存在，则$f^\*$是一个局部算符。
 
-首先注意到$f^*(h\omega)=(f^*h)(f^*\omega)$。设$\omega$在$U$上为零，利用\pararef{regular}，我们可以找一个$U$开覆盖。然后在每个开覆盖中的开集$W$上，同\pararef{localform}利用单位分解找一个光滑函数$h\_W$，则按照上式$f^*(h\_W\omega)$只可能在$\overline{W}$内不为零，因此，如果$\omega$在$U$上为零，则$h\_W\omega$就恒为零，所以$(f^*h\_W)(f^*\omega)=f^*(h\_W\omega)=0$. 由于$f^*h\_W=h\_W\circ f$在$f^{-1}(W)$内等于$1$，所以$(f^*\omega)|\_{f^{-1}(W)}=0$，遍历开覆盖，我们就得到了$(f^*\omega)|\_{f^{-1}(U)}=0$.
+首先注意到$f^\*(h\omega)=(f^\*h)(f^\*\omega)$。设$\omega$在$U$上为零，利用\pararef{regular}，我们可以找一个$U$开覆盖。然后在每个开覆盖中的开集$W$上，同\pararef{localform}利用单位分解找一个光滑函数$h\_W$，则按照上式$f^\*(h\_W\omega)$只可能在$\overline{W}$内不为零，因此，如果$\omega$在$U$上为零，则$h\_W\omega$就恒为零，所以$(f^\*h\_W)(f^\*\omega)=f^\*(h\_W\omega)=0$. 由于$f^\*h\_W=h\_W\circ f$在$f^{-1}(W)$内等于$1$，所以$(f^\*\omega)|\_{f^{-1}(W)}=0$，遍历开覆盖，我们就得到了$(f^\*\omega)|\_{f^{-1}(U)}=0$.
 
-特别地，如果$\omega\_1$和$\omega\_2$在$U$上相同，则$0=(f^*(\omega\_1-\omega\_2))|\_{f^{-1}(U)}=(f^*\omega\_1)|\_{f^{-1}(U)}-(f^*\omega\_2)|\_{f^{-1}(U)}$，这就意味着$f^*\omega\_1$和$f^*\omega\_2$在局部相同，此即黏合条件。
+特别地，如果$\omega\_1$和$\omega\_2$在$U$上相同，则$0=(f^\*(\omega\_1-\omega\_2))|\_{f^{-1}(U)}=(f^\*\omega\_1)|\_{f^{-1}(U)}-(f^\*\omega\_2)|\_{f^{-1}(U)}$，这就意味着$f^\*\omega\_1$和$f^\*\omega\_2$在局部相同，此即黏合条件。
 
-我们这里不再重复类似$\dd\_U$诱导出$\dd\_V$的过程，以及这些$f^*\_U$什么的和限制映射之间的关系，统统直接记做$f^*$，则$f^*(\omega\_{U})=(f^* \omega)\_{f^{-1}(U)}$。因为局部来说$k$-形式确实可以写成一些比较低阶的形式楔积并线性组合而成，以及我们已经对$0$-形式和$1$-形式定义了拉回，则局部的$k$-形式的拉回可以使用我们的定义递归地定义出来，那么剩下的只要拼起来就好，而这正需要黏合条件。
+我们这里不再重复类似$\dd\_U$诱导出$\dd\_V$的过程，以及这些$f^\*\_U$什么的和限制映射之间的关系，统统直接记做$f^\*$，则$f^\*(\omega\_{U})=(f^\* \omega)\_{f^{-1}(U)}$。因为局部来说$k$-形式确实可以写成一些比较低阶的形式楔积并线性组合而成，以及我们已经对$0$-形式和$1$-形式定义了拉回，则局部的$k$-形式的拉回可以使用我们的定义递归地定义出来，那么剩下的只要拼起来就好，而这正需要黏合条件。
 
-最后，这样定义的$f^*$在一点诱导出的$f^*\_p$（类似$\dd$到$\dd\_p$）可以验证和$1$-形式间已经存在的$f^*\_p$用张量积诱导出来的映射是相同的。
+最后，这样定义的$f^\*$在一点诱导出的$f^\*\_p$（类似$\dd$到$\dd\_p$）可以验证和$1$-形式间已经存在的$f^\*\_p$用张量积诱导出来的映射是相同的。
 
-88 设$f:M\to N$，则$f^*(\dd \omega)=\dd (f^*\omega)$.实际上，我们只要局部对单项式证明即可，设$\omega=a\dd x^{1}\wedge\cdots\wedge \dd x^{k}$，则$\dd \omega=\dd a\wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}$，以及\\[f^*(\dd \omega)=(f^*\dd a)\wedge f^*(\dd x^{1}\wedge\cdots\wedge \dd x^{k})=\dd (f^*a)\wedge \dd f^*(x^{1})\wedge\cdots\wedge \dd f^*(x^{k})=\dd (f^*\omega).\\]
+88 设$f:M\to N$，则$f^\*(\dd \omega)=\dd (f^\*\omega)$.实际上，我们只要局部对单项式证明即可，设$\omega=a\dd x^{1}\wedge\cdots\wedge \dd x^{k}$，则$\dd \omega=\dd a\wedge \dd x^{1}\wedge\cdots\wedge \dd x^{k}$，以及\\[f^\*(\dd \omega)=(f^\*\dd a)\wedge f^\*(\dd x^{1}\wedge\cdots\wedge \dd x^{k})=\dd (f^\*a)\wedge \dd f^\*(x^{1})\wedge\cdots\wedge \dd f^\*(x^{k})=\dd (f^\*\omega).\\]
 
-因为$f^*$将恰当形式映射成恰当形式，即$f^*(\im \dd\_N)\subset \im \dd\_M$，所以他诱导了两个流形上同调群之间的同态$f^*:H^k(N)\to H^k(M)$.
+因为$f^\*$将恰当形式映射成恰当形式，即$f^\*(\im \dd\_N)\subset \im \dd\_M$，所以他诱导了两个流形上同调群之间的同态$f^\*:H^k(N)\to H^k(M)$.
 
 ## 1.6. Introduction to de Rham Cohomology 
 
@@ -472,29 +475,29 @@ D(\omega)=\sum\_{i=r+1}^n \psi\_i\wedge \omega\_i,\\]其中$\psi\_i$是一次微
 89 一系列矢量空间和上面的线性映射$A\xrightarrow{f}B\xrightarrow{g}C$称为正和列，就是说$\ker g=\mathrm{Im} f$.而$0\to A\xrightarrow{f}B$
 就是说$f$是单射，而$B\xrightarrow{g}C\to 0$就是说$g$是满射。而正和列\\[0\to A\xrightarrow{f}B\xrightarrow{g}C\to 0\\]称为短正合列。
 
-90 一个矢量空间和线性映射链$A^*=\\{A\_i,\dd\_i\\}$\\[\cdots\to A^{i-1}\xrightarrow{\dd^{i-1}}A^i\xrightarrow{\dd^i}A^{i+1}\to \cdots\\]称为链复形，如果对于任意的$i$都有$\dd^i \circ \dd^{i+1}=0$.当对任意的$i$都有$\ker \dd^i=\mathrm{Im}\, \dd^{i-1}$,则这个链复形称为正和的。
+90 一个矢量空间和线性映射链$A^\*=\\{A\_i,\dd\_i\\}$\\[\cdots\to A^{i-1}\xrightarrow{\dd^{i-1}}A^i\xrightarrow{\dd^i}A^{i+1}\to \cdots\\]称为链复形，如果对于任意的$i$都有$\dd^i \circ \dd^{i+1}=0$.当对任意的$i$都有$\ker \dd^i=\mathrm{Im}\, \dd^{i-1}$,则这个链复形称为正和的。
 
-91 很容易看到，$\Omega^*(M)$和外微分算子$\dd$构成一个链复形。那么同样，对于任意的链复形都可以定义上同调群$H^p(A^*)=\ker (\dd^p)/\mathrm{Im} (\dd^{p-1})$，其中的元素同样用等价类符号$[a]$记。
+91 很容易看到，$\Omega^\*(M)$和外微分算子$\dd$构成一个链复形。那么同样，对于任意的链复形都可以定义上同调群$H^p(A^\*)=\ker (\dd^p)/\mathrm{Im} (\dd^{p-1})$，其中的元素同样用等价类符号$[a]$记。
 
-92 如果在两条链的每一个对应链的对象之间，譬如说$A\_i$和$B\_i$之间，存在线性映射$f^i$，那么自然就在两条链之间引入了一个映射$f:A^*\to B^*$，需要交换图如下：\\[\xymatrix{
+92 如果在两条链的每一个对应链的对象之间，譬如说$A\_i$和$B\_i$之间，存在线性映射$f^i$，那么自然就在两条链之间引入了一个映射$f:A^\*\to B^\*$，需要交换图如下：\\[\xymatrix{
 	\cdots\ar[r]&A^{p-1}\ar[r]^{\dd\_A^{p-1}}\ar[d]^{f^{p-1}}&A^p\ar[r]^{\dd\_A^p}\ar[d]^{f^{p}}&A^{p+1}\ar[r]\ar[d]^{f^{p+1}}&\cdots\\\
 	\cdots\ar[r]&B^{p-1}\ar[r]^{\dd\_B^{p-1}}&B^p\ar[r]^{\dd\_B^p}&B^{p+1}\ar[r]&\cdots
-	}\\]从交换图可以看到，应该满足$\dd^{p}\_B\circ f^p=f^{p+1}\circ \dd^{p}\_A$.既然在链复形之间引入了映射，则他诱导了上同调群之间的映射。通过$f^*([a])=[f^p(a)]$，我们诱导了$f^*=H^p(f):H^p(A^*)\to H^p(B^*)$.
+	}\\]从交换图可以看到，应该满足$\dd^{p}\_B\circ f^p=f^{p+1}\circ \dd^{p}\_A$.既然在链复形之间引入了映射，则他诱导了上同调群之间的映射。通过$f^\*([a])=[f^p(a)]$，我们诱导了$f^\*=H^p(f):H^p(A^\*)\to H^p(B^\*)$.
 
-93 链复形也可以构成一个链，尤其重要的是短正合列$0\to A^*\xrightarrow{f}B^*\xrightarrow{g}C^*\to 0$.链的短正和列就是当对任意的$p$都有短正合列$0\to A^p\xrightarrow{f^p}B^p\xrightarrow{g^p}C^p\to 0$.
+93 链复形也可以构成一个链，尤其重要的是短正合列$0\to A^\*\xrightarrow{f}B^\*\xrightarrow{g}C^\*\to 0$.链的短正和列就是当对任意的$p$都有短正合列$0\to A^p\xrightarrow{f^p}B^p\xrightarrow{g^p}C^p\to 0$.
 
-94 链复形的短正合列$0\to A^*\xrightarrow{f}B^*\xrightarrow{g}C^*\to 0$引入了上同调群的正合列$H^p(A^*)\xrightarrow{f^*}H^p(B^*)\xrightarrow{g^*}H^p(C^*)$.
+94 链复形的短正合列$0\to A^\*\xrightarrow{f}B^\*\xrightarrow{g}C^\*\to 0$引入了上同调群的正合列$H^p(A^\*)\xrightarrow{f^\*}H^p(B^\*)\xrightarrow{g^\*}H^p(C^\*)$.
 
-\*Proof.\* 其实就是证明$\ker g^*=\mathrm{Im}\, f^*$.首先证明$\mathrm{Im}\, f^* \subset \ker g^*$，任取$[a]\in H^p(A^*)$，我们有\\[g^*\circ f^*([a])=[g^p\circ f^p(a)]=[0]=0.\\]这是从正合列$A^p\xrightarrow{f^p}B^p\xrightarrow{g^p}C^p$中得知的。
+*Proof.* 其实就是证明$\ker g^\*=\mathrm{Im}\, f^\*$.首先证明$\mathrm{Im}\, f^\* \subset \ker g^\*$，任取$[a]\in H^p(A^\*)$，我们有\\[g^\*\circ f^\*([a])=[g^p\circ f^p(a)]=[0]=0.\\]这是从正合列$A^p\xrightarrow{f^p}B^p\xrightarrow{g^p}C^p$中得知的。
 
-然后证明$\ker g^*\subset \mathrm{Im}\, f^*$.这就是说，任意的$g^*[b]=0$的$[b]$都可以找到$[a]$使得$f^*[a]=[b]$.
+然后证明$\ker g^\*\subset \mathrm{Im}\, f^\*$.这就是说，任意的$g^\*[b]=0$的$[b]$都可以找到$[a]$使得$f^\*[a]=[b]$.
 
-因为对任意的$p$有$0=g^*[b]=[g^p(b)]$，因此存在一个$c$使得$g^p(b)=\dd^{p-1}\_C(c)$，而$g^{p-1}$又是满射，所以可以找到$b'$使得$g^{p-1}(b')=c$,因此用交换图变换\\[g^p(\dd^{p-1}\_B(b'))=d^{p-1}\_C(g^{p-1}(b'))=g^p(b).\\]
+因为对任意的$p$有$0=g^\*[b]=[g^p(b)]$，因此存在一个$c$使得$g^p(b)=\dd^{p-1}\_C(c)$，而$g^{p-1}$又是满射，所以可以找到$b'$使得$g^{p-1}(b')=c$,因此用交换图变换\\[g^p(\dd^{p-1}\_B(b'))=d^{p-1}\_C(g^{p-1}(b'))=g^p(b).\\]
 
-所以$g^p(b-\dd^{p-1}\_B(b'))=0$，所以存在$a$使得$f^p(a)=b-\dd^{p-1}\_B(b')$。现在只要证明这个$a$确实在$\ker \dd^p\_A$里面就可以了。为此只要证明$\dd^p\_A a=0$就可以，但是因为$f^{p+1}$是单射，所以也等价于证明$f^{p+1}\circ \dd^p\_A (a)=0$.用交换图变换\\[f^{p+1}\circ \dd^p\_A (a)=\dd^p\_B\circ f^p (a)=\dd^p\_B(b-\dd^{p-1}\_B(b'))=\dd^p\_B(b)=0.\\]因为$a$确实在$\ker \dd^p\_A$里面，所以他在$H^p(A^*)$里面对应了一个等价类$[a]$，成立$f^*[a]=[b]$.<div align = right>Q.E.D.</div>
+所以$g^p(b-\dd^{p-1}\_B(b'))=0$，所以存在$a$使得$f^p(a)=b-\dd^{p-1}\_B(b')$。现在只要证明这个$a$确实在$\ker \dd^p\_A$里面就可以了。为此只要证明$\dd^p\_A a=0$就可以，但是因为$f^{p+1}$是单射，所以也等价于证明$f^{p+1}\circ \dd^p\_A (a)=0$.用交换图变换\\[f^{p+1}\circ \dd^p\_A (a)=\dd^p\_B\circ f^p (a)=\dd^p\_B(b-\dd^{p-1}\_B(b'))=\dd^p\_B(b)=0.\\]因为$a$确实在$\ker \dd^p\_A$里面，所以他在$H^p(A^\*)$里面对应了一个等价类$[a]$，成立$f^\*[a]=[b]$.<p align = right>Q.E.D.</p>
 
 95 链复形的短正和列还引入了其他两个正合列。对于链复形的短正合列$
-0\to A^*\xrightarrow{f}B^*\xrightarrow{g}C^*\to 0$，定义$\partial^*:H^p(C^*)\to H^{p+1}(A^*)$为线性映射\\[\partial^*([c])=\left[(f^{p+1})^{-1}\left(\dd^p\_B\left((g^p)^{-1}(c)\right)\right)\right].\\]
+0\to A^\*\xrightarrow{f}B^\*\xrightarrow{g}C^\*\to 0$，定义$\partial^\*:H^p(C^\*)\to H^{p+1}(A^\*)$为线性映射\\[\partial^\*([c])=\left[(f^{p+1})^{-1}\left(\dd^p\_B\left((g^p)^{-1}(c)\right)\right)\right].\\]
 
 $\partial^p$即交换图\\[	\xymatrix{
 	&0\ar[d]&0\ar[d]&0\ar[d]&\\\
@@ -502,48 +505,48 @@ $\partial^p$即交换图\\[	\xymatrix{
 	\cdots\ar[r]&B^{p-1}\ar[r]^{\dd\_B^{p-1}}\ar[d]^{g^{p-1}}&B^p\ar[r]^{\dd\_B^p}\ar[d]^{g^{p}}&B^{p+1}\ar[r]\ar[d]^{g^{p+1}}&\cdots\\\
 	\cdots\ar[r]&C^{p-1}\ar[r]^{\dd\_B^{p-1}}\ar[d]&C^p\ar[r]^{\dd\_B^p}\ar[d]\ar[ruu]&C^{p+1}\ar[r]\ar[d]&\cdots\\\
 	&0&0&0&
-	}\\]中的斜线。这里就不证明这是良定义的了。因此，链复形的短正合列$0\to A^*\xrightarrow{f}B^*\xrightarrow{g}C^*\to 0$诱导了上同调群的正合列\\[\begin{split}
-&H^p(B^*)\xrightarrow{g^*}H^p(C^*)\xrightarrow{\partial^*}H^{p+1}(A^*),\\\
-&H^p(C^*)\xrightarrow{\partial^*}H^{p+1}(A^*)\xrightarrow{f^*}H^{p+1}(B^*).
+	}\\]中的斜线。这里就不证明这是良定义的了。因此，链复形的短正合列$0\to A^\*\xrightarrow{f}B^\*\xrightarrow{g}C^\*\to 0$诱导了上同调群的正合列\\[\begin{split}
+&H^p(B^\*)\xrightarrow{g^\*}H^p(C^\*)\xrightarrow{\partial^\*}H^{p+1}(A^\*),\\\
+&H^p(C^\*)\xrightarrow{\partial^\*}H^{p+1}(A^\*)\xrightarrow{f^\*}H^{p+1}(B^\*).
 \end{split}\\]
 
 
 96 \label{longexact}
-链复形的短正合列$0\to A^*\xrightarrow{f}B^*\xrightarrow{g}C^*\to 0$引入了上同调群的正合列\\[\cdots\to H^p(A^*)\xrightarrow{f^*}H^p(B^*)\xrightarrow{g^*}H^p(C^*)\xrightarrow{\partial^*}H^{p+1}(A^*)\xrightarrow{f^*}H^{p+1}(B^*)\to\cdots.\\]
+链复形的短正合列$0\to A^\*\xrightarrow{f}B^\*\xrightarrow{g}C^\*\to 0$引入了上同调群的正合列\\[\cdots\to H^p(A^\*)\xrightarrow{f^\*}H^p(B^\*)\xrightarrow{g^\*}H^p(C^\*)\xrightarrow{\partial^\*}H^{p+1}(A^\*)\xrightarrow{f^\*}H^{p+1}(B^\*)\to\cdots.\\]
 
 
-97 \label{directsum} 链复形可以谈论直和，即是对链中每一个矢量空间进行直和。那么从$\ker$和$\mathrm{Im}$对于直和的显然性质，我们有$H^p(A^*\oplus B^*)=H^p(A^*)\oplus H^p(B^*)$.
+97 \label{directsum} 链复形可以谈论直和，即是对链中每一个矢量空间进行直和。那么从$\ker$和$\mathrm{Im}$对于直和的显然性质，我们有$H^p(A^\*\oplus B^\*)=H^p(A^\*)\oplus H^p(B^\*)$.
 
-$\Omega^*(U)$和外微分算子$\dd$构成一个链复形，下面的定理给出了有关于欧氏空间两个开集和他们的并与交的短正合列。
+$\Omega^\*(U)$和外微分算子$\dd$构成一个链复形，下面的定理给出了有关于欧氏空间两个开集和他们的并与交的短正合列。
 
-98 设$U\_1$和$U\_2$是$\rr^n$中的开集，记$i\_\nu:U\_\nu \to U\_1 \cup U\_2$和$j\_\nu:U\_1\cap U\_2 \to U\_\nu$是嵌入，则有如下的短正合列：\\[0\to \Omega^p(U\_1\cup U\_2)\xrightarrow{I^p}\Omega^p(U\_1)\oplus\Omega^p(U\_2)\xrightarrow{J^p}\Omega^p(U\_1\cap U\_2)\to 0.\\]其中$I^p(\omega)=(i\_1^*(\omega),i\_2^*(\omega))$, $J^p(\omega\_1,\omega\_2)=j\_1^*(\omega\_1)-j\_2^*(\omega\_2)$.
+98 设$U\_1$和$U\_2$是$\rr^n$中的开集，记$i\_\nu:U\_\nu \to U\_1 \cup U\_2$和$j\_\nu:U\_1\cap U\_2 \to U\_\nu$是嵌入，则有如下的短正合列：\\[0\to \Omega^p(U\_1\cup U\_2)\xrightarrow{I^p}\Omega^p(U\_1)\oplus\Omega^p(U\_2)\xrightarrow{J^p}\Omega^p(U\_1\cap U\_2)\to 0.\\]其中$I^p(\omega)=(i\_1^\*(\omega),i\_2^\*(\omega))$, $J^p(\omega\_1,\omega\_2)=j\_1^\*(\omega\_1)-j\_2^\*(\omega\_2)$.
 
-\*Proof.\* 先证明$I^*$是单射，这就是说除了$I^*(\omega)=0$只有解$\omega=0$.
+*Proof.* 先证明$I^\*$是单射，这就是说除了$I^\*(\omega)=0$只有解$\omega=0$.
 
-设$\varphi$是$\rr^n$中的开集的嵌入，则对于任意的$p$-形式$\dd x\_I=\dd x\_{i\_1}\wedge\dots\wedge\dd x\_{i\_p}$都有$\varphi^* \dd x\_I =\dd x\_I$，因此\\[\varphi^*\omega=\varphi^*\sum\_If\_I\dd x\_I=\sum\_If\_I\circ\varphi \dd x\_I.\\]
+设$\varphi$是$\rr^n$中的开集的嵌入，则对于任意的$p$-形式$\dd x\_I=\dd x\_{i\_1}\wedge\dots\wedge\dd x\_{i\_p}$都有$\varphi^\* \dd x\_I =\dd x\_I$，因此\\[\varphi^\*\omega=\varphi^\*\sum\_If\_I\dd x\_I=\sum\_If\_I\circ\varphi \dd x\_I.\\]
 
-现在证明$J^*$是一个满射。将单位分解应用到$U\_1$和$U\_2$上面取，存在$p\_\nu$为定义在$U\_1\cup U\_2$上的光滑函数，而他的非零点集包含于$U\_\nu$，且$p\_1(x)+p\_2(x)=1$.
+现在证明$J^\*$是一个满射。将单位分解应用到$U\_1$和$U\_2$上面取，存在$p\_\nu$为定义在$U\_1\cup U\_2$上的光滑函数，而他的非零点集包含于$U\_\nu$，且$p\_1(x)+p\_2(x)=1$.
 
 设$f$定义在$U\_1\cap U\_2$上。定义$U\_1$上的光滑函数$f\_1$，他在$U\_1\cap U\_2$上的限制为$f(x)p\_2(x)$和$U\_2$上的光滑函数$f\_2(x)$，他在$U\_1\cap U\_2$上的限制为$-f(x)p\_1(x)$.那么在$U\_1\cap U\_2$上$f\_1(x)-f\_2(x)=f(x)$.
 
 所以任选一个$U\_1\cap U\_2$上的$p$-形式$\omega$，系数$f\_I$都可以定义出$f\_{1,I}$和$f\_{2,I}$，并且在$U\_1\cap U\_2$上满足$f\_{1,I}-f\_{2,I}=f$,因此也定义了两个$\omega\_1$和$\omega\_2$得到$J^p(\omega\_1,\omega\_2)=\omega$.
 
-那么$I^*(\omega)=0$就是说$i\_1^*(\omega)=i\_2^*(\omega)=0$，这就是说$f\_I\circ i\_1=f\_I\circ i\_2=0$，但是由于$U\_1$和$U\_2$是$U\_1\cup U\_2$的一个开覆盖，所以这就等价于$f\_I=0$，所以$\omega=0$.
+那么$I^\*(\omega)=0$就是说$i\_1^\*(\omega)=i\_2^\*(\omega)=0$，这就是说$f\_I\circ i\_1=f\_I\circ i\_2=0$，但是由于$U\_1$和$U\_2$是$U\_1\cup U\_2$的一个开覆盖，所以这就等价于$f\_I=0$，所以$\omega=0$.
 
 然后证明$\ker J^p=\mathrm{Im}\, I^p$.分两个包含。
 
-\no{1} $\mathrm{Im}\, I^p\subset \ker J^p$\\[J^p\circ I^p(\omega)=j\_2^*\circ i\_2^*(\omega)-j\_1^*\circ i\_1^*(\omega)\\]但其实$i\_2\circ j\_2=i\_1\circ j\_1$,所以$J^p\circ I^p(\omega)=0$.
+\no{1} $\mathrm{Im}\, I^p\subset \ker J^p$\\[J^p\circ I^p(\omega)=j\_2^\*\circ i\_2^\*(\omega)-j\_1^\*\circ i\_1^\*(\omega)\\]但其实$i\_2\circ j\_2=i\_1\circ j\_1$,所以$J^p\circ I^p(\omega)=0$.
 
 \no{2} $\ker J^p\subset \mathrm{Im}\, I^p$
 
-设$\omega\_1=\sum\_I f\_I \dd x\_I\in \Omega^p(U\_1)$和$\omega\_2=\sum\_I g\_I \dd x\_I\in \Omega^p(U\_2)$，从$J^p(\omega\_1,\omega\_2)=0$我们有$j\_1^*(\omega\_1)=j\_2^*(\omega\_2)$，这就是说$f\circ j\_1=g\circ j\_2$，或者说$f$和$g$在$U\_1\cap U\_2$恒等。我们可以构成一个光滑函数$h\_I$，他在$U\_1$上的限制恒等于$f\_I$，而$U\_2$上恒等于$g\_I$.那么\\[I^p\left(\sum\_Ih\_I\dd x\_I\right)=(\omega\_1,\omega\_2).\\]<div align = right>Q.E.D.</div>
+设$\omega\_1=\sum\_I f\_I \dd x\_I\in \Omega^p(U\_1)$和$\omega\_2=\sum\_I g\_I \dd x\_I\in \Omega^p(U\_2)$，从$J^p(\omega\_1,\omega\_2)=0$我们有$j\_1^\*(\omega\_1)=j\_2^\*(\omega\_2)$，这就是说$f\circ j\_1=g\circ j\_2$，或者说$f$和$g$在$U\_1\cap U\_2$恒等。我们可以构成一个光滑函数$h\_I$，他在$U\_1$上的限制恒等于$f\_I$，而$U\_2$上恒等于$g\_I$.那么\\[I^p\left(\sum\_Ih\_I\dd x\_I\right)=(\omega\_1,\omega\_2).\\]<p align = right>Q.E.D.</p>
 将Theorem \pararef{longexact} 和 Proposition \pararef{directsum} 应用到上面这个定理。就得到下面这个定理。
 
 99 Mayer-Vietoris列：
-设$U\_1$和$U\_2$是$\rr^n$中的开集，则有如下的正合列：\\[\cdots\to H^p(U\_1\cup U\_2)\xrightarrow{I^*}H^p(U\_1)\oplus H^p(U\_2)\xrightarrow{J^*}H^p(U\_1\cap U\_2)\xrightarrow{\partial^*}H^{p+1}(U\_1\cup U\_2)
-\to \cdots\\]其中$I^*([\omega])=(i\_1^*([\omega]),i\_2^*([\omega]))$,$J^*([\omega\_1],[\omega\_2])=j\_1^*([\omega\_1])-j\_2^*([\omega\_2])$.
+设$U\_1$和$U\_2$是$\rr^n$中的开集，则有如下的正合列：\\[\cdots\to H^p(U\_1\cup U\_2)\xrightarrow{I^\*}H^p(U\_1)\oplus H^p(U\_2)\xrightarrow{J^\*}H^p(U\_1\cap U\_2)\xrightarrow{\partial^\*}H^{p+1}(U\_1\cup U\_2)
+\to \cdots\\]其中$I^\*([\omega])=(i\_1^\*([\omega]),i\_2^\*([\omega]))$,$J^\*([\omega\_1],[\omega\_2])=j\_1^\*([\omega\_1])-j\_2^\*([\omega\_2])$.
 
-如果$U\_1\cap U\_2=\varnothing$，那么$H^p(U\_1\cap U\_2)=0$.所以\\[0\xrightarrow{\partial^*} H^p(U\_1\cup U\_2)\xrightarrow{I^*}H^p(U\_1)\oplus H^p(U\_2)\xrightarrow{J^*}0,\\]那么$I^*$既单又满，故而是个同构。
+如果$U\_1\cap U\_2=\varnothing$，那么$H^p(U\_1\cap U\_2)=0$.所以\\[0\xrightarrow{\partial^\*} H^p(U\_1\cup U\_2)\xrightarrow{I^\*}H^p(U\_1)\oplus H^p(U\_2)\xrightarrow{J^\*}0,\\]那么$I^\*$既单又满，故而是个同构。
 
 如果我们已知$U\_1$和$U\_2$的上同调群，那么通过Mayer-Vietoris列我们就有可能计算他们的并或者交的上同调群。
 
@@ -553,24 +556,24 @@ $\Omega^*(U)$和外微分算子$\dd$构成一个链复形，下面的定理给�
 
 101 光滑函数的同伦的一个技术性引理（见单位分解的附录）：在欧氏空间背景下，任何一个连续映射都同伦于一个光滑映射。如果两个光滑函数$f\_1$, $f\_2:U\to V$是同伦的，则存在光滑函数$F:U\times \rr\to V$满足$F(x,0)=f\_1(x)$和$F(x,1)=f\_2(x)$.
 
-102 两条链复形和两个映射$f$, $g:A^*\to B^*$如果对每一个$p$都存在线性映射$s^p:A^p \to B^{p-1}$满足\\[\dd\_B^{p-1}s^p+s^{p+1}\dd\_A^p=f^p-g^p:A^p\to B^p.\\]则$f^*=g^*$.这样的两个映射被称为链同伦的。
+102 两条链复形和两个映射$f$, $g:A^\*\to B^\*$如果对每一个$p$都存在线性映射$s^p:A^p \to B^{p-1}$满足\\[\dd\_B^{p-1}s^p+s^{p+1}\dd\_A^p=f^p-g^p:A^p\to B^p.\\]则$f^\*=g^\*$.这样的两个映射被称为链同伦的。
 
-\*Proof.\* 对任意的$[a]\in H^p(A^*)$，我们有$\dd\_A^p(a)=0$，所以\\[(f^*-g^*)[a]=[(f^p-g^p)a]=[\dd^{p-1}\_Bs^p(a)+s^{p+1}\dd\_A^p(a)]=[\dd^{p-1}\_Bs^p(a)],\\]而$\dd^{p-1}\_Bs(a)$显然被等价为0，所以$f^*=g^*$.<div align = right>Q.E.D.</div>
+*Proof.* 对任意的$[a]\in H^p(A^\*)$，我们有$\dd\_A^p(a)=0$，所以\\[(f^\*-g^\*)[a]=[(f^p-g^p)a]=[\dd^{p-1}\_Bs^p(a)+s^{p+1}\dd\_A^p(a)]=[\dd^{p-1}\_Bs^p(a)],\\]而$\dd^{p-1}\_Bs(a)$显然被等价为0，所以$f^\*=g^\*$.<p align = right>Q.E.D.</p>
 
 103 如果两个光滑函数$f$, $g:U\to V$是同伦的，则$
-f^*$, $g^*:\Omega^*(V)\to \Omega^*(U)$是链同伦的，即$f^*=g^*$。
+f^\*$, $g^\*:\Omega^\*(V)\to \Omega^\*(U)$是链同伦的，即$f^\*=g^\*$。
 
-\*Proof.\* 利用我们的技术性引理，由于$f$, $g:U\to V$是同伦的，所以存在光滑函数$F:U\times \rr \to V$使得$F(x,0)=f(x)$和$F(x,1)=g(x)$.
+*Proof.* 利用我们的技术性引理，由于$f$, $g:U\to V$是同伦的，所以存在光滑函数$F:U\times \rr \to V$使得$F(x,0)=f(x)$和$F(x,1)=g(x)$.
 
-注意到任意的$U\times \rr$上的$p$-形式可以写作\\[\omega=\sum\_If\_I(x,t)\dd x\_I+\sum\_J g\_J(x,t)\dd t\wedge \dd x\_J.\\]让$\varphi\_0:x\mapsto (x,0)$和$\varphi\_1:x\mapsto (x,1)$，则$F\circ \varphi\_0=f$和$F\circ \varphi\_1=g$，且将上面的形式分别拉回到\\[\varphi\_0^*\omega=\sum\_I f\_I(x,0)\dd x\_I,\quad
-\varphi\_1^*\omega=\sum\_I f\_I(x,1)\dd x\_I.\\]
+注意到任意的$U\times \rr$上的$p$-形式可以写作\\[\omega=\sum\_If\_I(x,t)\dd x\_I+\sum\_J g\_J(x,t)\dd t\wedge \dd x\_J.\\]让$\varphi\_0:x\mapsto (x,0)$和$\varphi\_1:x\mapsto (x,1)$，则$F\circ \varphi\_0=f$和$F\circ \varphi\_1=g$，且将上面的形式分别拉回到\\[\varphi\_0^\*\omega=\sum\_I f\_I(x,0)\dd x\_I,\quad
+\varphi\_1^\*\omega=\sum\_I f\_I(x,1)\dd x\_I.\\]
 
-现在我们需要构造一个$S^p:\Omega^p(U\times \rr)\to \Omega^{p-1}(U)$使得\\[(\dd \circ S^p+S^{p+1}\circ \dd)(\omega)=(\varphi\_1^*-\varphi\_0^*)(\omega),\\]如果这样，对于任意$U$中的形式我们有\\[(\dd \circ S^p+S^{p+1}\circ \dd)(F^*\omega)=(\varphi\_1^*-\varphi\_0^*)(F^*\omega)=((F\circ \varphi\_1)^*-(F\circ \varphi\_0)^*)(\omega)=(g^*-f^*)(\omega),\\]而最左边又有\\[(\dd \circ S^p\circ F^*+S^{p+1}\circ F^* \circ \dd)(\omega)\\]所以只要定义$s^p=S^p\circ F^*$,这就是链同伦。
+现在我们需要构造一个$S^p:\Omega^p(U\times \rr)\to \Omega^{p-1}(U)$使得\\[(\dd \circ S^p+S^{p+1}\circ \dd)(\omega)=(\varphi\_1^\*-\varphi\_0^\*)(\omega),\\]如果这样，对于任意$U$中的形式我们有\\[(\dd \circ S^p+S^{p+1}\circ \dd)(F^\*\omega)=(\varphi\_1^\*-\varphi\_0^\*)(F^\*\omega)=((F\circ \varphi\_1)^\*-(F\circ \varphi\_0)^\*)(\omega)=(g^\*-f^\*)(\omega),\\]而最左边又有\\[(\dd \circ S^p\circ F^\*+S^{p+1}\circ F^\* \circ \dd)(\omega)\\]所以只要定义$s^p=S^p\circ F^\*$,这就是链同伦。
 
-为此定义\\[S^p(\omega)=\sum\_J\left(\int\_0^1g\_J(x,t)\dd t\right)\dd x\_J.\\]<div align = right>Q.E.D.</div>
+为此定义\\[S^p(\omega)=\sum\_J\left(\int\_0^1g\_J(x,t)\dd t\right)\dd x\_J.\\]<p align = right>Q.E.D.</p>
 利用这个命题，我们可以知道，同伦等价对应到上同调群就有了上同调群的同构，因此上同调群只依赖于同伦型。
 
-104 由于对于可缩开子集$0^*=\id^*$，所以如果$U\subset \rr^n$可缩，那么$U$上的闭形式是恰当形式。这被称为Poincaré引理，通过他，我们知道可缩开集$U$的上同调群如下，$H^0(U)=\rr$，而对于$p>0$，则为$H^p(U)=0$.
+104 由于对于可缩开子集$0^\*=\id^\*$，所以如果$U\subset \rr^n$可缩，那么$U$上的闭形式是恰当形式。这被称为Poincaré引理，通过他，我们知道可缩开集$U$的上同调群如下，$H^0(U)=\rr$，而对于$p>0$，则为$H^p(U)=0$.
 
 105 用Mayer-Vietoris列计算$H^{p}(\rr^2-\\{0\\})$.
 
@@ -581,19 +584,19 @@ f^*$, $g^*:\Omega^*(V)\to \Omega^*(U)$是链同伦的，即$f^*=g^*$。
 0&,p>0.
 \end{cases}\\]而$\rr^2-\\{0\\}$是连通的，所以$H^0(\rr^2-\\{0\\})=\rr$.
 
-当$p>0$的时候，代入Mayer-Vietoris列\\[H^p(U\_1\cap U\_2)\xrightarrow{\partial^*}H^{p+1}(U\_1\cup U\_2)\xrightarrow{I^*}H^{p+1}(U\_1)\oplus H^{p+1}(U\_2)\xrightarrow{J^*}H^{p+1}(U\_1\cap U\_2),\\]头尾通过计算都为$0$，所以\\[H^{p+1}(\rr^2-\\{0\\})=H^{p+1}(U\_1\cup U\_2)\cong H^{p+1}(U\_1)\oplus H^{p+1}(U\_2)=0.\\]这就是说，平面挖一个洞的$2$阶以上的上同调群为$0$.
+当$p>0$的时候，代入Mayer-Vietoris列\\[H^p(U\_1\cap U\_2)\xrightarrow{\partial^\*}H^{p+1}(U\_1\cup U\_2)\xrightarrow{I^\*}H^{p+1}(U\_1)\oplus H^{p+1}(U\_2)\xrightarrow{J^\*}H^{p+1}(U\_1\cap U\_2),\\]头尾通过计算都为$0$，所以\\[H^{p+1}(\rr^2-\\{0\\})=H^{p+1}(U\_1\cup U\_2)\cong H^{p+1}(U\_1)\oplus H^{p+1}(U\_2)=0.\\]这就是说，平面挖一个洞的$2$阶以上的上同调群为$0$.
 
 现在考察一阶$\rr^2-\\{0\\}$的上同调群，由于负阶都为$0$，所以
- \[
+ \\\[
 0\to H^0(U\_1\cup U\_2)\xrightarrow{I^\*}H^0(U\_1)\oplus H^0(U\_2)\xrightarrow{J^\*}H^0(U\_1\cap U\_2)\xrightarrow{\partial^\*}H^{1}(U\_1\cup U\_2)\to 0\\]或者
- \[
+ \\\[
 0\to \rr\xrightarrow{f}\rr\oplus\rr\xrightarrow{g}\rr\oplus\rr\xrightarrow{h}H^{1}(\rr^2-\\{0\\})\to 0.\\]由于$f$是单射而且正和性给出$\ker g = \mathrm{Im}\,f$，所以$\ker g =\rr$，而由线性代数基本定理，有$\mathrm{Im}\,g \cong \rr$，因此正合列给出$\ker h \cong \rr$，而因为$h$是满射，所以根据同构基本定理$H^{1}(\rr^2-\\{0\\})\cong(\rr\oplus\rr)/\ker h \cong \rr$.
 
-综上，\[H^{p}(\rr^2-\\{0\\})\cong
+综上，\\\[H^{p}(\rr^2-\\{0\\})\cong
 \begin{cases}
 \rr&,p=0,1;\\\
 0&,p>1.
-\end{cases}\]
+\end{cases}\\\]
 
 106  同样是Mayer-Vietoris列的算例。将$\rr^n$看做$\rr^{n+1}$的子空间，设$A$是$\rr^n$中的闭子集，则\\[\begin{cases}
 H^{p+1}(\rr^{n+1}-A)\cong H^p(\rr^n-A),&\text{when}\,p>1,\\\
@@ -605,14 +608,14 @@ H^{0}(\rr^{n+1}-A)\cong \rr.&
 \begin{cases}
 \rr&,p=0,n-1;\\\
 0&,\text{otherwise}.
-\end{cases}\]
+\end{cases}\\\]
 这个结论可以用来证明$\rr^m$和$\rr^n$之间不存在同胚，如果存在，将同胚调整为$0$映射到$0$，而由于同胚将产生上同调群间的同构，所以$H^{p}(\rr^n-{0})$与$H^{p}(\rr^m-{0})$对于任意$p$都是同构的，但这不可能。
 
 由于当$n>0$的时候，$S^{n-1}$和$\rr^n-\\{0\\}$同胚（当然也自然同伦等价），所以我们也计算出了球面的上同调群为\\[H^{p}(S^{n})\cong
 \begin{cases}
 \rr&,p=0,n;\\\
 0&,\text{otherwise}.
-\end{cases}\]
+\end{cases}\\\]
 
 上面一些计算出的上同调群可以产生许多有名经典的拓扑结论，比如Jordan-Brouwer分割定理，Brouwer不动点定理等。最简单的，比如$S^n$和$S^m$在$n\neq m$时候不同胚。
 
@@ -630,10 +633,10 @@ H^{0}(\rr^{n+1}-A)\cong \rr.&
 
 110 我们有$\partial^2=0$.
 
-\*Proof.\* 直接对单项式计算\\[\begin{split}
+*Proof.* 直接对单项式计算\\[\begin{split}
 \partial^2 \sigma&=\sum\_{i=0}^p (-1)^i\partial\sigma|\_{[v\_0,\cdots,\hat{v}\_i,\cdots,v\_p]}\\\
 &=\sum\_{0\leq i<j\leq n}^p (-1)^{i+j-1}\bigl(\sigma|\_{[v\_0,\cdots,\hat{v}\_i,\cdots,\hat{v}\_j,\cdots,v\_p]}-\sigma|\_{[v\_0,\cdots,\hat{v}\_i,\cdots,\hat{v}\_j,\cdots,v\_p]}\bigr)=0.
-\end{split}\\]<div align = right>Q.E.D.</div>
+\end{split}\\]<p align = right>Q.E.D.</p>
 $\partial^2=0$和$\dd^2=0$是如此的相似！实际上，我们可以定义$H\_k(M)=\ker\partial/\im\partial$，这就是流形$M$的第$k$个奇异同调群。这里不展开，我们暂时的目标还是积分。
 
 111 由于每一个$[v\_0,\cdots,v\_p]$都同胚与标准$p$-单形，所以，在同胚意义下，以标准$p$-单形为定义域的流形上的$p$-单形与定义域为花式的$[v\_0,\cdots,v\_p]$的流形上的$p$-单形应该是一样多的。所以我们可以限定，流形上的$p$-单形的定义域为标准$p$-单形。
@@ -646,15 +649,15 @@ $\partial^2=0$和$\dd^2=0$是如此的相似！实际上，我们可以定义$H\
 
 113 设$\omega$是$\rr^n$中的$n$-形式，写作$f\dd x^1\wedge\cdots\wedge \dd x^n$，则我们定义他在区域$A$上的积分算符为线性函数\\[\int\_A \omega=\int\_A f \dd x^1\cdots\dd x^n,\\]有时候为了省空间，我们以$\Int\_A$来记$\int\_A$. 并且，反过来，我们也将欧式空间里的$n$-重积分写作对微分形式积分的样子\\[\int\_A f \dd x^1\cdots\dd x^n=\int\_A f\dd x^1\wedge\cdots\wedge \dd x^n.\\]
 
-有了这个定义，我们可以重写积分变量替换公式为\\[\int\_{\varphi(A)}\omega=\pm\int\_A \varphi^*\omega,\\]其中当$\det(\varphi\_*)>0$的时候取正，反之取负。
+有了这个定义，我们可以重写积分变量替换公式为\\[\int\_{\varphi(A)}\omega=\pm\int\_A \varphi^\*\omega,\\]其中当$\det(\varphi\_\*)>0$的时候取正，反之取负。
 
 114 设$\sigma$是一个$M$上的0-单形，即一个点$\sigma(0)\in M$，定义在$\sigma$上的积分为$\Int\_\sigma \omega=\omega(\sigma(0))$.
 
-115 对于$p\leq 1$的情况，设$\sigma:\Delta^p\to M$是一个$M$上的一个$p$-单形，这里$p>0$，那么$\sigma$诱导了一个拉回映射$\sigma^*$，我们定义一个$p$-形式$\omega$在$\sigma$上的积分如下：\\[\int\_\sigma \omega=\int\_{\Delta^p} \sigma^*\omega,\\]注意到等式右边就是一个$\rr^{p}$内对$p$-形式的积分，这个积分上面我们已经定义了。
+115 对于$p\leq 1$的情况，设$\sigma:\Delta^p\to M$是一个$M$上的一个$p$-单形，这里$p>0$，那么$\sigma$诱导了一个拉回映射$\sigma^\*$，我们定义一个$p$-形式$\omega$在$\sigma$上的积分如下：\\[\int\_\sigma \omega=\int\_{\Delta^p} \sigma^\*\omega,\\]注意到等式右边就是一个$\rr^{p}$内对$p$-形式的积分，这个积分上面我们已经定义了。
 
 当我们在一条链上积分的时候，比如$c=\sum\_{i} n\_i \sigma\_i$，我们定义\\[\int\_c \omega=\sum\_i n\_i \int\_{\sigma\_i} \omega.\\]此时，单形之间加起来成链在积分的意义下清楚了不少。
 
-116 设$f:M\to N$是一个光滑映射，设$\sigma$是$M$上的一个单形，则$f\circ \sigma$是$N$上的一条单形，那么对$N$上的$p$-形式\\[\int\_{f\circ\sigma} \omega = \int\_{\Delta^p}(f\circ \sigma)^*\omega= \int\_{\Delta^p}\sigma^*\circ f^*(\omega)=\int\_{\sigma}f^*\omega.\\]这推广了重积分变量替换公式。
+116 设$f:M\to N$是一个光滑映射，设$\sigma$是$M$上的一个单形，则$f\circ \sigma$是$N$上的一条单形，那么对$N$上的$p$-形式\\[\int\_{f\circ\sigma} \omega = \int\_{\Delta^p}(f\circ \sigma)^\*\omega= \int\_{\Delta^p}\sigma^\*\circ f^\*(\omega)=\int\_{\sigma}f^\*\omega.\\]这推广了重积分变量替换公式。
 
 117 微积分基本定理：设$c$是$M$上的一个1-链，而$f$是$M$上的一个光滑函数，则\\[\int\_{\partial c} f=\int\_c \dd f.\\]对于$c$是一个1-单形的时候，这个定理翻译成我们熟知的语言即$\int\_a^b \dd f=f(b)-f(a)$，而两边对于$c$都是线性的，所以上述定理对链依然成立。
 
@@ -662,40 +665,40 @@ $\partial^2=0$和$\dd^2=0$是如此的相似！实际上，我们可以定义$H\
 
 这是两个（一个）极伟大的定理，尽管证明他并不是特别困难。他的重要性无需强调，每一个做过定积分（包括曲面积分等）计算的人都知道他多么有用。
 
-\*Proof.\* 对于$p=1$的情况，这就是微积分基本定理，所以我们下面假设$p\leq 2$.由于积分对链是线性的，所以我们只要对一个单形去证明就可以了，即\\[\int\_{\sigma} \dd \omega=\int\_{\partial \sigma} \omega,\\]利用积分的定义，我们把单形拉回到欧式空间里面，证明几乎就可以在欧式空间里面进行，即\\[\int\_{\Delta^p} \sigma^*(\dd \omega)=\sum\_{i=0}^p(-1)^i\int\_{\Delta^{p-1}} (\sigma^i)^*\omega=\sum\_{i=0}^p(-1)^i\int\_{\Delta^{p-1}} (k^p\_i)^*\circ \sigma^*(\omega).\\]
+*Proof.* 对于$p=1$的情况，这就是微积分基本定理，所以我们下面假设$p\leq 2$.由于积分对链是线性的，所以我们只要对一个单形去证明就可以了，即\\[\int\_{\sigma} \dd \omega=\int\_{\partial \sigma} \omega,\\]利用积分的定义，我们把单形拉回到欧式空间里面，证明几乎就可以在欧式空间里面进行，即\\[\int\_{\Delta^p} \sigma^\*(\dd \omega)=\sum\_{i=0}^p(-1)^i\int\_{\Delta^{p-1}} (\sigma^i)^\*\omega=\sum\_{i=0}^p(-1)^i\int\_{\Delta^{p-1}} (k^p\_i)^\*\circ \sigma^\*(\omega).\\]
 
-我们假设\\[\sigma^*\omega=\sum\_{i=1}^pa\_i\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots \dd x^p,\\]所以等式左边写作\\[\begin{split}
-\int\_{\Delta^p} \sigma^*(\dd \omega)=\int\_{\Delta^p} \dd(\sigma^* \omega)&=\sum\_{i=1}^p\int\_{\Delta^{p}} \dd a\_i\wedge \dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^p\\\
+我们假设\\[\sigma^\*\omega=\sum\_{i=1}^pa\_i\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots \dd x^p,\\]所以等式左边写作\\[\begin{split}
+\int\_{\Delta^p} \sigma^\*(\dd \omega)=\int\_{\Delta^p} \dd(\sigma^\* \omega)&=\sum\_{i=1}^p\int\_{\Delta^{p}} \dd a\_i\wedge \dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^p\\\
 &=\sum\_{i=1}^p\int\_{\Delta^{p}} (-1)^{i-1}\partial\_i a\_i\dd x^1\wedge\cdots \wedge\dd x^p.
 \end{split}\\]
 
-现在来看右边，由于\\[(k^p\_0)^*(x^j)=
+现在来看右边，由于\\[(k^p\_0)^\*(x^j)=
 \begin{cases}
 1-\sum\_{i=1}^{p-1}x^i,& j =1;\\\
 x^{j-1},& j>1,
 \end{cases}\quad
-(k^p\_i)^*(x^j)=
+(k^p\_i)^\*(x^j)=
 \begin{cases}
 x^j,& 1\leq j \leq i-1;\\\
 0,& j=i;\\\
 x^{j-1},& i+1\leq j \leq p.
 \end{cases}\\]所以\\[\begin{split}
-\sum\_{i=0}^p(-1)^i\int\_{\Delta^{p-1}}& (k^p\_i)^*(a\_j\dd x^1\wedge\cdots\wedge\widehat{\dd x^j}\wedge\cdots \dd x^p)\\\
+\sum\_{i=0}^p(-1)^i\int\_{\Delta^{p-1}}& (k^p\_i)^\*(a\_j\dd x^1\wedge\cdots\wedge\widehat{\dd x^j}\wedge\cdots \dd x^p)\\\
 &=(-1)^{j-1}\int\_{\Delta^{p-1}} (a\_j\circ k^p\_0)\dd x^1\wedge\cdots \wedge\dd x^{p-1}+(-1)^j\int\_{\Delta^{p-1}} (a\_j\circ k\_j^p)\dd x^1\wedge\cdots \wedge\dd x^{p-1},
 \end{split}\\]对右侧第一项做一个适当的变量替换$\varphi^i$如下\\[\varphi^i(x)=
 \begin{cases}
 x,& i=1;\\\
 (1-\sum\_{i=1}^{p-1}x^i,x^2,\cdots,x^{p-1}),& i=2;\\\
 (x^2,\cdots,x^{i-1},1-\sum\_{i=1}^{p-1}x^i,x^{i+1},\cdots,x^{p-1}),& 2<i\leq p.
-\end{cases}\\]容易证明$\varphi^i(\Delta^{p-1})=\Delta^{p-1}$以及$\det ((\varphi^i)\_*)=1$，所以，由重积分变量替换公式，我们得到\\[\begin{split}
-\sum\_{i=0}^p&(-1)^i\int\_{\Delta^{p-1}} (k^p\_i)^*(a\_j\dd x^1\wedge\cdots\wedge\widehat{\dd x^j}\wedge\cdots \dd x^p)\\\
+\end{cases}\\]容易证明$\varphi^i(\Delta^{p-1})=\Delta^{p-1}$以及$\det ((\varphi^i)\_\*)=1$，所以，由重积分变量替换公式，我们得到\\[\begin{split}
+\sum\_{i=0}^p&(-1)^i\int\_{\Delta^{p-1}} (k^p\_i)^\*(a\_j\dd x^1\wedge\cdots\wedge\widehat{\dd x^j}\wedge\cdots \dd x^p)\\\
 =&(-1)^{j-1}\int\_{\Delta^{p-1}} a\_j\left(x^1,\cdots,x^{j-1},1-\sum\_{i=1}^{p-1}x^i,x^{j},\cdots,x^p\right)\dd x^1\wedge\cdots \wedge\dd x^{p-1}+\\\
 &(-1)^{j}\int\_{\Delta^{p-1}}a\_j(x^1,\cdots,x^{j-1},0,x^{j},\cdots,x^p)\dd x^1\wedge\cdots \wedge\dd x^{p-1},
 \end{split}\\]所以最后我们只需要证明\\[\begin{split}
 \int\_{\Delta^{p}}\partial\_i a\_i\dd x^1\wedge\cdots \wedge\dd x^p=
 &\int\_{\Delta^{p-1}} a\_j\left(x^1,\cdots,x^{j-1},1-\sum\_{i=1}^{p-1}x^i,x^{j},\cdots,x^p\right)\dd x^1\wedge\cdots \wedge\dd x^{p-1}\\\
 &-\int\_{\Delta^{p-1}}a\_j(x^1,\cdots,x^{j-1},0,x^{j},\cdots,x^p)\dd x^1\wedge\cdots \wedge\dd x^{p-1},
-\end{split}\\]注意这其实是重积分，利用一元的微积分基本定理即得。<div align = right>Q.E.D.</div>
+\end{split}\\]注意这其实是重积分，利用一元的微积分基本定理即得。<p align = right>Q.E.D.</p>
 
 119 回到积分曲面的问题，我们谈过，积分曲面的存在性就在于曲边四边形的可拼合与否。这里，利用沿着曲线（1-单形）的积分，我们再来演示一次$\dd\omega$决定了他是否可积。
 

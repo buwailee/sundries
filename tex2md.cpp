@@ -40,6 +40,19 @@ stringstream stepone(ifstream &in){
 	char c;
 	int count = 0;
 	ChaSect counter;
+
+	// // read header
+	// while(in.get(c)){
+	// 	char d = in.peek();
+	// 	if (c == '\\' && isalnum(d)){
+	// 		string foo = readoneword(in, c);
+	// 		if (foo == "newcommand"){
+				
+	// 		}
+	// 	}
+	// }
+
+	// read texts
 	while(in.get(c)){
 		char d = in.peek();
 		if (c == '%')
@@ -50,18 +63,22 @@ stringstream stepone(ifstream &in){
 			string foo = readoneword(in, c);
 			if (foo == "chapter")
 				temp << "# " << ++counter.chapter << ". " << readwords(in, c) << ' ';
-			else if (foo == "section")
+			else if (foo == "section"){
+				count = 0;
 				temp << "## " << counter.chapter << "." << ++counter.section << ". " << readwords(in, c) << ' ';
+			}
 			else if (foo == "subsection")
 				temp << "### " << counter.chapter << "." << counter.section << "." << ++counter.subsection << ". " << readwords(in, c) << ' ';
 			// else if (foo == "textit")
 			// 	temp << "*" << readwords(in, c) << "* ";
-			else if (foo == "pro" || foo == "lem" || foo == "defi" || foo == "theo" || foo == "para")
-				temp << '\n' << ++count << ' ';
+			else if (foo == "para")
+				temp << '\n' << counter.section << ++count << ' ';
+			else if (foo == "pro" || foo == "lem" || foo == "defi" || foo == "theo")
+				temp << '\n' << foo << ' ' << ++count << ' ';
 			else if (foo == "proof")
 				temp << "*Proof.* ";
 			else if (foo == "qed")
-				temp << "<div align = right>Q.E.D.</div>";
+				temp << "<p align = right>Q.E.D.</p>";
 			else if (foo == "label"){
 				temp << "<span id = \"" << readwords(in, c) << "\"></span>";
 			}
@@ -75,15 +92,20 @@ stringstream stepone(ifstream &in){
 					hashead = true;
 				else if (bar == "align*")
 					temp << "\\[\\begin{split}";
-				else if (bar == "split" || bar == "equation" || bar == "cases")
+				// else if (bar == "split" || bar == "equation" || bar == "cases")
+				// 	temp << "\\begin{" << bar << '}';
+				else
 					temp << "\\begin{" << bar << '}';
 			}
 			else if (foo == "end"){
 				string bar = readwords(in, c);
-				if (bar == "split" || bar == "equation" || bar == "cases")
+				if (bar == "align*")
+					temp << "\\end{split}\\]\n";
+				else if (bar == "document");
+				// else if (bar == "split" || bar == "equation" || bar == "cases")
+				// 	temp << "\\end{" << bar << '}';
+				else
 					temp << "\\end{" << bar << '}';
-				else if (bar == "align*")
-					temp << "\\end{split}\\]";
 			}
 			else
 				temp << '\\' << foo << c;
@@ -104,14 +126,26 @@ stringstream steptwo(stringstream &in, bool hashead){
 		d = in.peek();
 		if (c == '$'){
 			ismathmode = !ismathmode;
-			out << c;
+			if (d == '$'){
+				in.get(c);
+				out << "$$";
+			}
+			else
+				out << c;
 		}
-		else if (c == '_')
-			out << '\\' << c;
-		else if (c == '*' && ismathmode)
+		else if (c == '_' || (c == '*' && ismathmode))
 			out << '\\' << c;
 		else if (c == '\\' && (d == '{' || d == '}' || d == '\\'))
 			out << '\\' << c;
+		else if (c == '\\' && (d == '[' || d == ']')){
+			ismathmode = !ismathmode;
+			out << "\\\\" << c;
+			if (in.peek() == '\n'){
+				in.get();
+				if (in.peek() == '\n')
+					out << '\n';
+			}
+		}
 		else if (c == '\n' && d == '\\'){
 			in.get();
 			in.get(c);
