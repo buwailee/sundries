@@ -72,7 +72,7 @@ stringstream stepone(ifstream &in){
 			// else if (foo == "textit")
 			// 	temp << "*" << readwords(in, c) << "* ";
 			else if (foo == "para")
-				temp << '\n' << counter.section << ++count << ' ';
+				temp << '\n' << counter.section << "." << ++count << ' ';
 			else if (foo == "pro" || foo == "lem" || foo == "defi" || foo == "theo")
 				temp << '\n' << foo << ' ' << ++count << ' ';
 			else if (foo == "proof")
@@ -92,8 +92,6 @@ stringstream stepone(ifstream &in){
 					hashead = true;
 				else if (bar == "align*")
 					temp << "\\[\\begin{split}";
-				// else if (bar == "split" || bar == "equation" || bar == "cases")
-				// 	temp << "\\begin{" << bar << '}';
 				else
 					temp << "\\begin{" << bar << '}';
 			}
@@ -102,8 +100,6 @@ stringstream stepone(ifstream &in){
 				if (bar == "align*")
 					temp << "\\end{split}\\]\n";
 				else if (bar == "document");
-				// else if (bar == "split" || bar == "equation" || bar == "cases")
-				// 	temp << "\\end{" << bar << '}';
 				else
 					temp << "\\end{" << bar << '}';
 			}
@@ -133,7 +129,7 @@ stringstream steptwo(stringstream &in, bool hashead){
 			else
 				out << c;
 		}
-		else if (c == '_' || (c == '*' && ismathmode))
+		else if (c == '_' || (c == '*' && ismathmode) || (c == '#' && ismathmode))
 			out << '\\' << c;
 		else if (c == '\\' && (d == '{' || d == '}' || d == '\\'))
 			out << '\\' << c;
